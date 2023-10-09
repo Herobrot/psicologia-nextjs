@@ -1,4 +1,61 @@
+main{
+    font-family: 'Blinker';
+}
+
 main > div.fondo{
-    background: url(/public/Fondo_Imagen.png);
+    background: url("/Fondo_Imagen.png");
     position: relative;
+    
+}
+
+main > div.fondo > div.presentacion{    
+    padding: 2%;
+    color:aliceblue;
+    background-color: rgba(115, 225, 188, 0.685);
+}
+
+div.fondo > div.presentacion > h1{
+    text-shadow:  0px 0px 20px 2px rgba(0,0,0, 0.5);
+}
+
+div.fondo > div.presentacion > p{
+    margin-block: 2%;
+    font-size: 120%;
+}
+
+div.presentacion > div.agendar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    padding-block: 2%;
+    background-color: #A6A4FF;
+}
+
+div.presentacion > div.agendar > h3{
+    font-weight: 100;
+}
+
+div.presentacion > div.agendar > svg{
+    color:rgb(154, 255, 221);
+}
+
+div.ayuda{
+    margin: 3% 5% 0 5%;
+}
+
+div.ayuda > div.h1{
+    background: #D2FDFE;
+    padding-left: 3%;
+}
+
+div.ayuda > div.h1 > h1{
+    color: #4F4F4F;
+    background: white;
+    padding-left: 1%;
+    font-weight: 400;
+}
+
+div.ayuda > p{
+    padding-top: 6%;
 }
