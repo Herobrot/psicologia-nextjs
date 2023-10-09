@@ -1,0 +1,4 @@
+main > div.fondo{
+    background: url(/public/Fondo_Imagen.png);
+    position: relative;
+}
