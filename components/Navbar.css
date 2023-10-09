@@ -67,6 +67,7 @@ nav > ul.nav-lista{
     background: rgb(3, 79, 167);
     text-align: center;
     transition: all .5s;
+    z-index: 9000;
 }
 
 nav > ul.nav-lista > li{

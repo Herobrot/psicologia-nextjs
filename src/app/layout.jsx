@@ -13,6 +13,7 @@ export default function RootLayout({children}){
         <html lang="es-MX">
             <head>
                 <link rel="logo Psicopedagogía" href="/logoP.ico" type="image/x-icon" />
+                <link href='https://fonts.googleapis.com/css?family=Blinker' rel='stylesheet' />
             </head>
             <body>
                 <Navbar />
