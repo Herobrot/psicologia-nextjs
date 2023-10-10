@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
 import "./inicio.css"
+import { Card_B } from '../../components/Cards';
 
 config.autoAddCss = false;
 
@@ -21,18 +22,16 @@ export default function Home(){
                     </div>
                 </div>
             </div>
-            <div className="ayuda">
-                <div className="h1">
-                    <h1>"Estamos aquí para ayudarte"</h1>
-                </div>
-                <p>
-                    Si piensa que tiene un problema, o no se siente bien,
+            <Card_B title='"Estamos aquí para ayudarte"'
+                text="Si piensa que tiene un problema, o no se siente bien,
                     nosotros estamos para ayudarte. Queremos que todos puedan
                     gozar de bienestar. Muchas personas en todo el mundo suelen
                     tener miedo de ir al psicologo. Agende su cita, sin contratiempos
-                    y sin necesidad de salir de casa, estamos para ayudarlo.
-                </p>
+                    y sin necesidad de salir de casa, estamos para ayudarlo." />
+            <div className="comoAgendar">
+                <h1>Como agendar una cita:</h1>
             </div>
+            
         </main>
     )
 }

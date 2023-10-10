@@ -30,6 +30,7 @@ div.presentacion > div.agendar{
     width: 50%;
     padding-block: 2%;
     background-color: #A6A4FF;
+    border: 1px solid black;
 }
 
 div.presentacion > div.agendar > h3{
@@ -40,22 +41,9 @@ div.presentacion > div.agendar > svg{
     color:rgb(154, 255, 221);
 }
 
-div.ayuda{
-    margin: 3% 5% 0 5%;
-}
+div.comoAgendar{
+    margin: 0 auto;
+    background: linear-gradient(113.31deg, rgba(0, 0, 0, 0.204866) 37.5%, rgba(0, 0, 0, 0.25) 56.25%, 
+    rgba(0, 0, 0, 0.155418) 66.15%, rgba(0, 0, 0, 0) 80.21%);
 
-div.ayuda > div.h1{
-    background: #D2FDFE;
-    padding-left: 3%;
-}
-
-div.ayuda > div.h1 > h1{
-    color: #4F4F4F;
-    background: white;
-    padding-left: 1%;
-    font-weight: 400;
-}
-
-div.ayuda > p{
-    padding-top: 6%;
 }
