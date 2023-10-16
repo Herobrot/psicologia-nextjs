@@ -8,14 +8,14 @@ export const metadata = {
     script: "https://kit.fontawesome.com/88239f68d2.js"
 }
 
-export default function RootLayout({children}){
+export default function RootLayout({ children }){
     return(
         <html lang="es-MX">
             <head>
                 <link rel="logo Psicopedagogía" href="/logoP.ico" type="image/x-icon" />
                 <link href='https://fonts.googleapis.com/css?family=Blinker' rel='stylesheet' />
             </head>
-            <body>
+            <body className="preLoad">
                 <Navbar />
                 {children}
             </body>

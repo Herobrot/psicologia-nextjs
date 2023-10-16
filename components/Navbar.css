@@ -6,6 +6,7 @@ header{
 header > nav{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 header > nav > div.logoContenedor{
@@ -31,12 +32,10 @@ header > nav > div.logoContenedor > a > h4{
     
 }
 
-nav > label{
-    display: flex;
-    align-items: center;
-}
 
-nav > label > .btn-bars{
+
+
+nav > .btn-bars{
     display: block;
     float: right;
     font-size: 180%;
@@ -49,44 +48,6 @@ nav > label > .btn-bars{
     transition: all 0.5s;
 }
 
-#check{
-    display: none;
-}
-
-#check:checked ~ ul.nav-lista{
-    height: 100vh;
-}
-
-#check:checked ~ label > .btn-bars{
-    color:rgb(255, 255, 255);
-    -webkit-box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.68);
-    -moz-box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.68);
-    box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.68);
-}
-
-#check:checked ~ ul.nav-lista > li{
-    opacity: 1;
-}
-
-ul.nav-lista > li > #check_2{
-    display: none;
-}
-
-#check_2:checked ~ nav > ul.nav-lista{
-    height: 0vh;
-}
-
-#check_2:checked ~ label > .btn-bars{
-    color:rgb(70, 70, 70);
-    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-}
-
-#check_2:checked ~ nav > ul.nav-lista > li{
-    opacity: 0;
-}
-
 nav > ul.nav-lista{
     list-style: none;
     padding: 0;
@@ -96,7 +57,6 @@ nav > ul.nav-lista{
     top: 7.2%;
     background: rgb(3, 79, 167);
     text-align: center;
-    transition: all .5s;
     z-index: 9000;
 }
 
@@ -104,21 +64,55 @@ nav > ul.nav-lista > li{
     opacity: 0;
     padding-block: 5%;
     line-height: 16px;
+    transition: opacity 0.5s;
+    color:aliceblue;
+}
+
+.btn-bars-active{
+    display: block;
+    float: right;
+    font-size: 180%;
+    margin-right: 20px;
+    cursor: pointer;
+    color:rgb(255, 255, 255);
+    -webkit-box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.68);
+    -moz-box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.68);
+    box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.68);
+    transition: all 0.5s;
+}
+
+ul.menu-open{
+    height: 100vh;
+    list-style: none;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 7.2%;
+    background: rgb(9, 77, 155);
+    text-align: center;
+    transition: all .5s;
+    z-index: 9000;
+}
+
+ul.menu-open > li{
+    opacity: 1;
+    padding-block: 5%;
+    line-height: 16px;
     transition: all .5s;
     color:aliceblue;
 }
 
-nav > ul.nav-lista > li > img{
+nav > ul > li > img{
     padding-top: 15%;
     height: auto;
     width: 30%;
 }
 
-nav > ul.nav-lista > li > p{
+nav > ul > li > p{
     font-size: 120%;
 }
 
-ul.nav-lista > li > label > a{
+ul > li > a{
     color: rgb(238, 238, 238);
     background-color: #337CCF;
     padding: 3% 5%;
