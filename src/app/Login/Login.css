@@ -1,22 +1,18 @@
 main{
     position: relative;
-    background: #191D88;
-    height: 93vh;
+    background: var(--primary-bg-color);
+    height: 100vh;
     font-family: 'Blinker';
     color: #fff;
     padding-left: 5%;
 }
 
 main > a{
-    color:#4a50f8
-}
-
-main > a > #icono{
+    color:#4a50f8;
     position: absolute;
     right: 3%;
-    top: 3%;
+    top: 10%;
     font-size: 350%;
-    color:#4a50f8
 }
 
 main > h1{
@@ -31,7 +27,7 @@ main > p{
 
 main > div{
     padding-block: 12%;
-    background: #1450A3;
+    background: var(--secondary-bg-color);
     width: 95%;
     text-align: center;
 }
@@ -50,7 +46,6 @@ main > div > input{
 
 main > div > input::placeholder{
     padding-left: 5%;
-
 }
 
 main > div > p{
@@ -64,6 +59,7 @@ main > div > a{
     font-weight: 200;
     border-radius: 20px;
     width: 60%;
+    background: var(--primary-a-bg-color);
     color: aliceblue;
     display: inline-block;
     border: 0;
@@ -72,8 +68,4 @@ main > div > a{
 main > div > #btn-IS{
     background: #da9800;
     margin-block: 5%;
-}
-
-main > div > .btn{
-    background: #337CCF;
 }

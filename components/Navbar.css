@@ -1,28 +1,35 @@
 header{
     font-family: "montserrat", sans-serif;
-    background: #3bb4bacc;
 }
 
 header > nav{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: #5af2fa;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
 header > nav > div.logoContenedor{
-    width: 50%;
-    padding: 3% 1% 3% 5%;
+    width: 100%;
+    padding-block: 2%;
     margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 nav > div.logoContenedor > a{
+    width: 47%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 nav > div.logoContenedor > a > img{
-    width: 20%;
+    width: 25%;
     height: auto;
 }
 
@@ -32,14 +39,9 @@ header > nav > div.logoContenedor > a > h4{
     
 }
 
-
-
-
-nav > .btn-bars{
-    display: block;
+nav > div.logoContenedor > .btn-bars{
     float: right;
     font-size: 180%;
-    margin-right: 20px;
     cursor: pointer;
     color:rgb(70, 70, 70);
     -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
@@ -49,15 +51,16 @@ nav > .btn-bars{
 }
 
 nav > ul.nav-lista{
+    overflow: hidden;
+    z-index: 0;
     list-style: none;
     padding: 0;
-    position: fixed;
     width: 100%;
     height: 0vh;
+    background: var(--primary-bg-color);
     top: 7.2%;
-    background: rgb(3, 79, 167);
     text-align: center;
-    z-index: 9000;
+    transition: all 0.5s;
 }
 
 nav > ul.nav-lista > li{
@@ -71,8 +74,7 @@ nav > ul.nav-lista > li{
 .btn-bars-active{
     display: block;
     float: right;
-    font-size: 180%;
-    margin-right: 20px;
+    font-size: 200%;
     cursor: pointer;
     color:rgb(255, 255, 255);
     -webkit-box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.68);
@@ -82,16 +84,17 @@ nav > ul.nav-lista > li{
 }
 
 ul.menu-open{
+    z-index: 1000;
+    display: block;
     height: 100vh;
     list-style: none;
     padding: 0;
-    position: fixed;
     width: 100%;
     top: 7.2%;
-    background: rgb(9, 77, 155);
+    background: var(--primary-bg-color);
     text-align: center;
     transition: all .5s;
-    z-index: 9000;
+    z-index: 1000;
 }
 
 ul.menu-open > li{
@@ -114,7 +117,7 @@ nav > ul > li > p{
 
 ul > li > a{
     color: rgb(238, 238, 238);
-    background-color: #337CCF;
+    background: var(--primary-a-bg-color);
     padding: 3% 5%;
     border-radius: 20px;
     font-size: 110%;

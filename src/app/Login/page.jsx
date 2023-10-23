@@ -6,7 +6,9 @@ export default function Login(){
     return(
         <>
             <main>
-                <a href="/"><FontAwesomeIcon icon={faArrowRightFromBracket} id="icono" /></a>
+                <a href="/" title="Inicio">
+                    <FontAwesomeIcon title="Inicio" icon={faArrowRightFromBracket} id="icono" />
+                </a>
                 <h1>Iniciar sesión</h1>
                 <p>Para continuar, debes iniciar sesion o crear una cuenta.</p>
                 <div>

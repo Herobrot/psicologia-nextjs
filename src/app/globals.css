@@ -1,3 +1,14 @@
+:root{
+    --primary-bg-color: #191D88;
+    --primary-a-bg-color: #337CCF;
+
+    --secondary-bg-color: #1450A3;
+}
+
+main{
+    padding-top: 15%;
+}
+
 *{
     margin: 0;
     box-sizing: border-box;

@@ -25,11 +25,11 @@ export default function Navbar(){
                     }}>
                         <img src="/oo.png" alt="" />
                         <h4>Psicopedagogía</h4>
-                    </a>
-                </div>                
-                <FontAwesomeIcon icon={faBars} className={menu ? "btn-bars" : "btn-bars-active"} onClick={() => {
-                    setMenu(!menu);
+                    </a>                                    
+                    <FontAwesomeIcon icon={faBars} className={menu ? "btn-bars" : "btn-bars-active"} onClick={() => {
+                        setMenu(!menu);
                 }} />
+                </div>
                 <ul className={menu ? "nav-lista" : "menu-open"} >
                     <li><img src="/oo.png" alt="" /></li>
                     <li>
