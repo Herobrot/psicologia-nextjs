@@ -3,10 +3,12 @@
     --primary-a-bg-color: #337CCF;
 
     --secondary-bg-color: #1450A3;
+    
+    --tertiary-bg-color: #213555;
 }
 
 main{
-    padding-top: 15%;
+    padding-top: 16%;
 }
 
 *{

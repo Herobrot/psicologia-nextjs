@@ -1,16 +1,17 @@
 main{
     position: relative;
     background: var(--primary-bg-color);
-    height: 100vh;
+    height: 100%;
     font-family: 'Blinker';
     color: #fff;
     padding-left: 5%;
+    padding-bottom: 5%;
 }
 
 main > a{
     color:#4a50f8;
     position: absolute;
-    right: 3%;
+    left: 3%;
     top: 10%;
     font-size: 350%;
 }

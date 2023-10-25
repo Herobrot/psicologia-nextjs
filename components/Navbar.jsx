@@ -46,7 +46,7 @@ export default function Navbar(){
                         <p>O bien, cree una nueva cuenta</p>
                     </li>
                     <li>                        
-                        <a href={""} className="menu" onClick={() => {
+                        <a href={"/Registro"} className="menu" onClick={() => {
                             if(!menu){
                                 setMenu(!menu)
                             }
