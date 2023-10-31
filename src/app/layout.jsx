@@ -1,5 +1,4 @@
 import "./globals.css"
-import Navbar from "../../components/Navbar"
 
 export const metadata = {
     charset: "UTF-8",
@@ -17,7 +16,6 @@ export default function RootLayout({ children }){
                 <script src="https://kit.fontawesome.com/88239f68d2.js" crossorigin="anonymous"></script>
             </head>
             <body className="preLoad">
-                <Navbar />
                 {children}
             </body>
         </html>

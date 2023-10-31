@@ -5,12 +5,14 @@ import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
 import "./inicio.css"
 import { Card_B } from '../../components/Cards';
 import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
 
 config.autoAddCss = false;
 
 export default function Home(){
     return(
         <>
+            <Navbar />
             <main>
                 <div className="fondo">
                     <div className="presentacion">

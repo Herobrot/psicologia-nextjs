@@ -1,3 +1,5 @@
+import Navbar from '../../../components/Navbar';
+
 export const metadata = {
     charset: "UTF-8",
     title: "Registrarse",
@@ -8,6 +10,7 @@ export const metadata = {
 export default function RegistroLayout({ children }){
     return(
         <>
+            <Navbar />
             {children}
         </>
     )
