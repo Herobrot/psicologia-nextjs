@@ -1,0 +1,72 @@
+main{
+    position: relative;
+    background: var(--primary-bg-color);
+    height: 100%;
+    font-family: 'Blinker';
+    color: #fff;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+
+main > a{
+    color:#4a50f8;
+    position: absolute;
+    left: 3%;
+    top: 10%;
+    font-size: 350%;
+}
+
+main > h1{
+    padding-top: 25%;
+    font-size: 300%;
+    font-weight: 500;
+}
+main > p{
+    font-weight: 500;
+    padding-block: 5%;
+}
+
+main > div{
+    padding-block: 12%;
+    background: var(--secondary-bg-color);
+    width: 95%;
+    text-align: center;
+}
+
+main > div > input{
+    border: 0px;
+    margin-block: 4%;
+    border-radius: 20px;
+    background-color: aliceblue;
+    color: gray;
+    font-size: 150%;
+    width: 80%;
+    height: 12vw;
+    font-weight: 200;
+}
+
+main > div > input::placeholder{
+    padding-left: 5%;
+}
+
+main > div > p{
+    font-size: 120%;
+    margin-block: 5%;
+}
+
+main > div > a{
+    font-size: 160%;
+    padding-block: 1%;
+    font-weight: 200;
+    border-radius: 20px;
+    width: 60%;
+    background: var(--primary-a-bg-color);
+    color: aliceblue;
+    display: inline-block;
+    border: 0;
+}
+
+main > div > #btn-IS{
+    background: #da9800;
+    margin-block: 5%;
+}

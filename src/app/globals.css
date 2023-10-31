@@ -1,10 +1,29 @@
+:root{
+    --primary-bg-color: #191D88;
+    --primary-a-bg-color: #337CCF;
+
+    --secondary-bg-color: #1450A3;
+    
+    --tertiary-bg-color: #213555;
+}
+
+main{
+    padding-top: 16%;
+}
+
 *{
     margin: 0;
-    padding: 0;
-    list-style: none;
     box-sizing: border-box;
 }
   
 * a{
     text-decoration: none;
 }
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }
