@@ -103,12 +103,10 @@ export default function Registro(){
                         } 
                     }).then((result) => {
                         if(result.isConfirmed){
-                            //Agregar codigo ya sea window.location u otro modo
-                            //aparte de mandar informacion
+                            window.location = "/Perfil"
                         }
                         else if(result.isDismissed){
-                            //Mismo código, pero este if es por si el usuario hace click fuera 
-                            //del popup
+                            window.location = "/Perfil"
                         }
                     })
                 }

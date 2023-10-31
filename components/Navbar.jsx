@@ -5,7 +5,6 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
 import { useState } from "react";
 
 
@@ -31,7 +30,9 @@ export default function Navbar(){
                 }} />
                 </div>
                 <ul className={menu ? "nav-lista" : "menu-open"} >
-                    <li><img src="/oo.png" alt="" /></li>
+                    <li><img src="/oo.png" alt="" onClick={() => {
+                        window.location="/"
+                    }} /></li>
                     <li>
                         <p>Cuenta anónima<br />Para continuar, inicie sesión.</p>    
                     </li>

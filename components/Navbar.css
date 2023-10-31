@@ -36,12 +36,12 @@ nav > div.logoContenedor > a > img{
 header > nav > div.logoContenedor > a > h4{
     text-decoration: none;
     color: black;
-    
+    font-size: 4vw;
 }
 
 nav > div.logoContenedor > .btn-bars{
     float: right;
-    font-size: 180%;
+    font-size: 6.78vw;
     cursor: pointer;
     color:rgb(70, 70, 70);
     -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
@@ -74,7 +74,8 @@ nav > ul.nav-lista > li{
 .btn-bars-active{
     display: block;
     float: right;
-    font-size: 200%;
+    font-size: 8vw;
+    background: rgba(0, 0, 0, 0.046);
     cursor: pointer;
     color:rgb(255, 255, 255);
     -webkit-box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.68);
