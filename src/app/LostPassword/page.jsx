@@ -1,10 +1,12 @@
+"use client"
 import React from "react";
-import { BotonContinuar } from "./BotonContinuar";
-import { EntradaCorreo } from "./EntradaCorreo";
-import "./style.css";
+import { BotonContinuar } from "./Componentes/BotonContinuar";
+import { EntradaCorreo } from "./Componentes/EntradaCorreo";
+import "./LostPassword.css";
 
-export const ContraseaOlvidada = () => {
+export default  function LostPassword (){
   return (
+    <main>
     <div className="contrasea-olvidada">
       <div className="div-2">
         <img className="boton-atras" alt="Boton atras" src="boton-atras.png" />
@@ -18,5 +20,6 @@ export const ContraseaOlvidada = () => {
         <div className="text-wrapper-2">¡Ups!</div>
       </div>
     </div>
+    </main>
   );
 };
