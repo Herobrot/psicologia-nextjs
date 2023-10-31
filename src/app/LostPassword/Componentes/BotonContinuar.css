@@ -1,0 +1,20 @@
+.boton-continuar {
+    background-color: #213555;
+    border-radius: 10px;
+    height: 60px;
+    position: relative;
+    width: 200px;
+  }
+  
+  .boton-continuar .text-wrapper {
+    color: #ffffff;
+    font-family: "Blinker-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    left: 37px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 11px;
+    white-space: nowrap;
+  }
