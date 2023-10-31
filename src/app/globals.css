@@ -5,6 +5,10 @@
     --secondary-bg-color: #1450A3;
     
     --tertiary-bg-color: #213555;
+
+    --primary-user-bg-color: #6C70E5;
+    --primary-user-button-color: rgb(3, 65, 141);
+    --secondary-user-bg-color: #9093E8;
 }
 
 main{
