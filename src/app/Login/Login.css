@@ -12,12 +12,11 @@ main > a{
     color:#4a50f8;
     position: absolute;
     left: 3%;
-    top: 10%;
+    top: 1%;
     font-size: 350%;
 }
 
 main > h1{
-    padding-top: 25%;
     font-size: 300%;
     font-weight: 500;
 }
