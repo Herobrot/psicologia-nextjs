@@ -5,11 +5,7 @@ const pacienteSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    apellidoPaterno:{
-        type: String,
-        required: true
-    },
-    apellidoMaterno:{
+    apellidos:{
         type: String,
         required: true
     },
