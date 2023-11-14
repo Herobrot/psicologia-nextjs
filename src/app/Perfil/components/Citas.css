@@ -1,0 +1,32 @@
+.contenedorCita{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2%;
+    padding-block: 3%;
+    background: #9093E8;
+    border-radius: 10px;
+}
+
+.contenedorCita > span{
+    font-size: 4.5vw;
+}
+
+.contenedorCita > .contenedorBotones{
+    font-size: 4vw;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.contenedorBotones > .fa-pen{
+    background: rgb(9, 184, 9);
+    border-radius: 100%;
+    padding: 10%;
+}
+
+.contenedorBotones > .fa-minus{
+    background: rgb(191, 1, 1);
+    border-radius: 100%;
+    padding: 10%;
+}

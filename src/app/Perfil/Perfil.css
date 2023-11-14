@@ -14,6 +14,11 @@ main > div{
     margin-block: 5%;
 }
 
+main > div > .contenedorProCit{
+    padding: 1.5%;
+    overflow-y: scroll;
+}
+
 main > div > p{
     font-size: 120%;
 }
@@ -26,6 +31,11 @@ main > div > div{
     background-color: var(--primary-user-bg-color);
 }
 
+main > div > div > .contenidoCitas{
+    display: grid;
+    row-gap: 5px;
+}
+
 main > div > div > div{
     position: relative;
 }
@@ -33,6 +43,10 @@ main > div > div > div{
 main > div > div > div > .defaultTexto{
     text-align: center;
     padding-top: 17%;
+}
+
+main > div > div > div > .ocultarTexto{
+    display: none;
 }
 
 main > div.botonesNav{
