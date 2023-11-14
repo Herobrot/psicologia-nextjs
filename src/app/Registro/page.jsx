@@ -87,8 +87,32 @@ export default function Registro(){
                     confirmButton: "swal-X",
                     denyButton: "swal-Check"
                 }
-            }).then((result) => {
+            }).then(async (result) => {
                 if(result.isDenied){
+                    try{
+                        const item = {
+                            nombre: nombre,
+                            apellidos: apellidos,
+                            telefono: telef,
+                            correo: correo,
+                            municipio: municipio,
+                            estado: estado,
+                            password: pass
+                        }
+                        const result = await fetch("localhost:3001/paciente", {
+                            method: "post",
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: item.json(),
+                        })
+                            .then((response) => response.json())
+                            .then((data) => console.log(data))                                                
+                    } catch(err){
+                        Swal.fire({
+                            title: "Ha sucedido un error al subir los datos"
+                        });
+                    }
                     Swal.fire({
                         title: "¡Datos confirmados!",
                         text: "¡Listo!, ya tiene una cuenta para hacer una cita",
