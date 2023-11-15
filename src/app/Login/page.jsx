@@ -13,7 +13,7 @@ export default function Login(){
                 <h1>Iniciar sesión</h1>
                 <p>Para continuar, debes iniciar sesion o crear una cuenta.</p>
                 <div>
-                    <input type="text" id="input" placeholder="Correo" />
+                    <input type="text" id="input" placeholder="Teléfono/Correo" />
                     <input type="password" id="input" placeholder="Contraseña" />
                     <br />
                     <a href="/" id="btn-IS">Iniciar sesión</a>

@@ -19,8 +19,17 @@
     width: 20%;
 }
 
+.contenedorBotones > svg:active{
+    transform: scale(0.9);
+    transition: transform 0.10s ease;
+}
+
+.contenedorBotones > svg{
+    transition: transform 0.10s ease;
+}
+
 .contenedorBotones > .fa-pen{
-    background: rgb(9, 184, 9);
+    background: rgb(7, 148, 7);
     border-radius: 100%;
     padding: 10%;
 }
@@ -29,4 +38,46 @@
     background: rgb(191, 1, 1);
     border-radius: 100%;
     padding: 10%;
+}
+
+.swal-popup{
+    width: 80%;
+    background: rgb(238, 238, 238);
+}
+
+.swal-title{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#swal2-html-container{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: 500;
+    font-size: 120%;
+}
+
+.swal-actions{
+    justify-content: space-around;
+    width: 100%;
+}
+
+.swal-X, .swal-Check{
+    border: 0;
+    color: aliceblue;
+    border-radius: 100%;
+    width: 15vw;
+    height: 15vw;
+}
+
+.swal-X{
+    font-size: 300%;
+    background: rgb(178, 13, 13);
+}
+
+.swal-Check{
+    font-size: 265%;
+    background: rgb(15, 15, 192);
 }

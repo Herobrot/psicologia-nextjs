@@ -13,7 +13,7 @@ export default function RootLayout({ children }){
             <head>
                 <link rel="logo Psicopedagogía" href="/favicon.ico" type="image/x-icon" />
                 <link href='https://fonts.googleapis.com/css?family=Blinker' rel='stylesheet' />
-                <script src="https://kit.fontawesome.com/88239f68d2.js" crossorigin="anonymous"></script>
+                <script src="https://kit.fontawesome.com/88239f68d2.js" crossOrigin="anonymous"></script>
             </head>
             <body className="preLoad">
                 {children}
