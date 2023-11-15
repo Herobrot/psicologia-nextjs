@@ -19,7 +19,7 @@ main > p{
 main > div{
     width: 90%;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 9%;
 }
 
 main > div > ul{
@@ -39,8 +39,8 @@ main > div > ul > li > input{
     border-radius: 20px;
     height: 9vw;
     width: 80%;
-    font-size: 150%;
-    padding-left: 5%;
+    font-size: 130%;
+    padding-left: 3%;
 }
 
 main > div > ul > li > input:focus{
@@ -54,11 +54,29 @@ main > div > input[type=radio]{
     width: 15px;
 }
 
+main > div > ul > li > span.Valido{
+    display: none;
+    overflow:hidden;
+    width: 0;
+    height: 0;
+    color:rgb(255, 80, 80);
+    visibility: hidden;
+}
+
+main > div > ul > li > span.Invalido{
+    visibility: visible;
+    display: block;
+    font-size: 105%;
+    padding-top: 2%;
+    color:rgb(255, 80, 80);
+    transition: all 0.3s;
+}
+
 main > div.buttons{
     position: relative;
     left: 20%;
     width: 50%;
-    padding-top: 5%;
+    padding-top: 10%;
     display: flex;
     justify-content: space-between;
 }

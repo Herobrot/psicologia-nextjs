@@ -1,7 +1,7 @@
 main{
     position: relative;
     background: var(--primary-bg-color);
-    height: 100%;
+    height: 100vh;
     font-family: 'Blinker';
     color: #fff;
     padding-left: 5%;
@@ -22,11 +22,11 @@ main > h1{
 }
 main > p{
     font-weight: 500;
-    padding-block: 5%;
+    padding-block: 3%;
 }
 
 main > div{
-    padding-block: 12%;
+    padding-block: 10%;
     background: var(--secondary-bg-color);
     width: 95%;
     text-align: center;
@@ -38,14 +38,14 @@ main > div > input{
     border-radius: 20px;
     background-color: aliceblue;
     color: gray;
-    font-size: 150%;
+    font-size: 130%;
     width: 80%;
     height: 12vw;
     font-weight: 200;
 }
 
 main > div > input::placeholder{
-    padding-left: 5%;
+    padding-left: 3%;
 }
 
 main > div > p{
@@ -54,7 +54,7 @@ main > div > p{
 }
 
 main > div > a{
-    font-size: 160%;
+    font-size: 150%;
     padding-block: 1%;
     font-weight: 200;
     border-radius: 20px;
@@ -67,5 +67,5 @@ main > div > a{
 
 main > div > #btn-IS{
     background: #da9800;
-    margin-block: 5%;
+    margin-block: 3%;
 }
