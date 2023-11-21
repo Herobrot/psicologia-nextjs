@@ -54,23 +54,23 @@ main > div > input[type=radio]{
     width: 15px;
 }
 
-main > div > ul > li > span.Valido{
-    display: none;
-    overflow:hidden;
-    width: 0;
-    height: 0;
+main > div > ul > li > div.Valido{
+    opacity: 0;
+    display: block;
+    font-size: 0;
     color:rgb(255, 80, 80);
     visibility: hidden;
+    transition: opacity 0.3s, font-size 0.3s;
 }
 
-main > div > ul > li > span.Invalido{
-    visibility: visible;
-    display: block;
+main > div > ul > li > div.Invalido{
+    opacity: 1;
     font-size: 105%;
     padding-top: 2%;
     color:rgb(255, 80, 80);
-    transition: all 0.3s;
+    transition: opacity 0.3s, font-size 0.3s;
 }
+
 
 main > div.buttons{
     position: relative;

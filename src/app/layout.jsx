@@ -1,3 +1,4 @@
+import SessionAuthProvider from "@/context/SessionAuthProvider"
 import "./globals.css"
 
 export const metadata = {
@@ -16,7 +17,9 @@ export default function RootLayout({ children }){
                 <script src="https://kit.fontawesome.com/88239f68d2.js" crossOrigin="anonymous"></script>
             </head>
             <body className="preLoad">
-                {children}
+                <SessionAuthProvider>
+                    {children}
+                </SessionAuthProvider>
             </body>
         </html>
     )
