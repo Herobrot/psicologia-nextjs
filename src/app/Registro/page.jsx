@@ -9,6 +9,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons"
 
 
 
+
 export default function Registro(){
     const [nombre, setNombre] = useState("");
     const [apellidos, setApellidos] = useState("");
@@ -16,10 +17,32 @@ export default function Registro(){
     const [correo, setCorreo] = useState("");
     const [pass, setPass] = useState("");
     const [auxPass, setAuxPass] = useState("");
+
+    const Alerta = (titulo, texto) => {
+        Swal.fire({
+            icon: "error",
+            title: String(titulo),
+            text: String(texto),
+            showFonfirmButton: true,
+            confirmButtonColor: "blue",
+            confirmButtonText:'<i class="fa-solid fa-check"></i>',
+            buttonsStyling: false,
+            showConfirmButton: false,
+            customClass: {
+                
+                title: "swal-title",
+                popup: "swal-popup",
+                confirmButton: "swal-Check"
+            }
+        });
+    }
+
     const Salir = () => {
         if(!nombre && !apellidos && !telef && !correo && !pass){
             window.location="/"
         }
+
+        
 
         else if(nombre || apellidos || telef || correo || pass ){
             Swal.fire({
@@ -66,6 +89,36 @@ export default function Registro(){
             })
         }
 
+        else if(/\d/.test(nombre) || /[^A-Za-z_]/.test(nombre)){
+            Alerta("¡Nombre imposible!", 
+            "El nombre tiene carácteres imposibles, asegúrese de escribir un nombre correcto.");
+        }
+
+        else if(/\d/.test(apellidos) || /[^A-Za-z_]/.test(apellidos)){
+            Alerta("¡Apellido imposible!",
+            "Los apellidos tienen carácteres imposibles, asegúrese de escribir solo letras.")
+        }
+
+        else if(!/^\d*$/.test(telef)){
+            Alerta("¡Número de teléfono imposible!",
+            "El número ingresado tiene letras o carácteres no numericos, escriba un número sin espacios/separadores")
+        }
+
+        else if(!/^\d{10,}$/.test(telef) && /^\d*$/.test(telef)){
+            Alerta("¡Faltan/Sobran dígitos!", 
+            "Asegúrese de haber escrito 10 dígitos en total");
+        }
+
+        else if(!(/^\w+([.]\w+)*@\w+([.]\w+)*[.][a-zA-Z]{2,5}$/.test(correo)) && correo){
+            Alerta("¡Correo no bien escrito!", 
+            'Consideré la siguiente referencia: "ejemplo@proveedor.com"');
+        }
+        
+        else if(!/\w{8,}/.test(pass)){
+            Alerta("¡La contraseña es muy débil!", 
+            "Es recomendable que la contraseña tenga un mínimo de 8 carácteres");
+        }
+
         else{
             Swal.fire({
                 title: "¿Confirmar datos?",
@@ -88,11 +141,6 @@ export default function Registro(){
             }).then(async (result) => {
                 if(result.isDenied){
                     try{
-                        const correoValido = /^\w+([.]\w+)*@\w+([.]\w+)*[.][a-zA-Z]{2,5}$/.test(correo);
-                        const nombreValido = !(/\d/.test(nombre));
-                        const apellidosValido = !(/\d/.test(apellidos));
-                        const passValido = pass === auxPass;
-                        const telfValido = (/\d/.test(telef) && telef.length === 10);
                         const item = {
                             nombre: nombre,
                             apellidos: apellidos,
@@ -106,6 +154,8 @@ export default function Registro(){
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify(item),
+                    }).then(response => {
+                        console.log(response.json());
                     })
                         
                     Swal.fire({
@@ -128,18 +178,12 @@ export default function Registro(){
                             window.location = "/Perfil"
                         }
                     })                
-                        if((correoValido || !correo) && nombreValido && apellidosValido && passValido && telfValido){                            
-                            
-                        }
-
-                        else{                           
-                        }
                                                 
                     } catch(err){
                         Swal.fire({
                             title: "Ha sucedido un error al subir los datos"
                         });
-                    }                
+                    }         
                 }
             })
         }
@@ -157,41 +201,43 @@ export default function Registro(){
                             value={nombre} onChange={(ev) => {
                                 setNombre(ev.target.value)
                             }} />
-                            <span className={(!/\d/.test(nombre)) ? "Valido" : "Invalido"}>*El nombre no debería de tener números</span>
+                            <div className={(!(/\d/.test(nombre) || /[^A-Za-z]/.test(nombre))) ? "Valido" : "Invalido"}>*El nombre debería usar solo letras</div>
                         </li>
                         <li>
                             <input autoComplete="no" placeholder="Apellidos" type="text"
                             value={apellidos} onChange={(ev) => {
                                 setApellidos(ev.target.value)
                             }} />
-                            <span className={(!/\d/.test(apellidos)) ? "Valido" : "Invalido"}>*El apellido no debería de tener números</span>
+                            <div className={(!(/\d/.test(apellidos) || /[^A-Za-z]/.test(apellidos))) ? "Valido" : "Invalido"}>*El apellido debería usar solo letras</div>
                         </li>
                         <li>
                             <input autoComplete="no" placeholder="Teléfono (10 digitos)" type="text"
                             value={telef} onChange={(ev) => {
                                 setTelef(ev.target.value)
                             }} />
-                            <span className={(/\d/.test(telef) || !telef) ? "Valido" : "Invalido"}>*El teléfono debería tener solo números</span>
+                            <div className={(/^\d*$/.test(telef) || !telef) ? "Valido" : "Invalido"}>*El teléfono debería tener solo números</div>
+                            <div className={(/^\d{10,}$/.test(telef) || !telef) ? "Valido" : "Invalido"}>*El teléfono debería 10 dígitos</div>
                         </li>
                         <li>
                             <input autoComplete="no" placeholder="Correo" type="email"
                             value={correo} onChange={(ev) => {
                                 setCorreo(ev.target.value)
                             }} />
-                            <span className={(/^\w+([.]\w+)*@\w+([.]\w+)*[.][a-zA-Z]{2,5}$/.test(correo) || !correo) ? "Valido" : "Invalido"}>*El correo debe tener el formato correcto (correo@ejemplo.com)</span>
+                            <div className={(/^\w+([.]\w+)*@\w+([.]\w+)*[.][a-zA-Z]{2,5}$/.test(correo) || !correo) ? "Valido" : "Invalido"}>*El correo debe tener el formato correcto (correo@ejemplo.com)</div>
                         </li>
                         <li>
                             <input autoComplete="no" placeholder="Contraseña" type="password"
                             value={pass} onChange={(ev) => {
                                 setPass(ev.target.value)
                             }} />
+                            <div className={/\w{8,}/.test(pass) || !pass ? "Valido" : "Invalido"}>*La contraseña debería tener un mínimo <br /> de 8 carácteres</div>
                         </li>
                         <li>
                             <input autoComplete="no" placeholder="Confirmar contraseña" type="password"
                             value={auxPass} onChange={(ev) => {
                                 setAuxPass(ev.target.value)
-                            }} /><br />
-                            <span className={(auxPass === pass) ? "Valido" : "Invalido"}>*Las contraseñas no coinciden</span>
+                            }} />
+                            <div className={(auxPass === pass) || !auxPass ? "Valido" : "Invalido"}>*Las contraseñas no coinciden</div>
                         </li>
                     </ul>
                 </div>
