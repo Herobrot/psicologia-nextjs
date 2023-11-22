@@ -19,7 +19,6 @@ export default function Perfil(){
         password: ""
     });
     const [contenidoCitas, setContenidoCitas] = useState([]);
-    const [existeCC, setExisteCC] = useState(false);
     const hayContenidoNotas = false;
     useEffect(() => {
         console.log(authData);
@@ -45,32 +44,16 @@ export default function Perfil(){
               estado: data.estado,
               password: data.password
             });
+            
+            //Genera un fetch a citas agarrando el arreglo de ids que el usuario contiene, para
+            //así contener en ContenidoCitas un arreglo de objetos de citas:
+            //setContenidoCitas(data.citas);
           })
           .catch(error => {
             console.error('Error al obtener datos:', error);
           });
       }, []);
-    useEffect(() => {
-        const cita = [{
-            FechaCita: "20 de Octubre - 04:30 PM",
-            EstatusCita: "Agendada"
-        },
-        {
-            FechaCita: "25 de Octubre - 10:30 PM",
-            EstatusCita: "Agendada"
-        },
-        {
-            FechaCita: "26 de Octubre - 10:30 PM",
-            EstatusCita: "Agendada"
-        },
-        {
-            FechaCita: "27 de Octubre - 10:30 PM",
-            EstatusCita: "Agendada"
-        },]
 
-        setContenidoCitas(cita)
-        setExisteCC(true)
-    }, [])
     return(
         <>
             <main>
@@ -78,9 +61,9 @@ export default function Perfil(){
                 <div className="proximasCitas">
                     <p>Proximas citas:</p>
                     <div className="contenedorProCit">
-                        <div className={existeCC ? "contenidoCitas" : "ocultarContenido"}>
+                        <div className={contenidoCitas ? "contenidoCitas" : "ocultarContenido"}>
                             <Citas citas={contenidoCitas} usuario={usuario} />
-                            <p className={existeCC ? "ocultarTexto" : "defaultTexto"}>
+                            <p className={contenidoCitas ? "ocultarTexto" : "defaultTexto"}>
                                 No tiene proximas citas.
                             </p>
                         </div>
