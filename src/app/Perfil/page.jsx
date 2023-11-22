@@ -5,21 +5,51 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket, faCircleUser, faCalendarPlus } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import Citas from "./components/Citas";
-
+import { saveAuthData, getAuthData, clearAuthData } from "../../../Token"
 export default function Perfil(){
-    const usuario = {
-        nombre: "Daniel",
-        apellidos: "Madrigal Schimt",
-        telefono: "9681001234",
-        correo: "example@gmail.com",
-        municipio: "Suchiapa",
-        estado: "Chiapas",
-        password: "Password"
-    };
+   
+    const authData = getAuthData();
+    const [usuario, setUsuario] = useState({
+        nombre: "",
+        apellidos: "",
+        telefono: "",
+        correo: "",
+        municipio: "",
+        estado: "",
+        password: ""
+    });
     const [contenidoCitas, setContenidoCitas] = useState([]);
     const [existeCC, setExisteCC] = useState(false);
     const hayContenidoNotas = false;
-
+    useEffect(() => {
+        console.log(authData);
+        fetch('https://apibuena.onrender.com/paciente/'+ authData.userId,{
+            headers: {
+                'Authorization': `${authData.token}`,
+                'Content-Type': 'application/json'
+              
+              },
+        })
+          .then(response => response.json())
+          .then(data => {
+           if(data.error){
+            clearAuthData();
+            window.location = "/"
+           }
+            setUsuario({
+              nombre: data.nombre,
+              apellidos: data.apellidos,
+              telefono: data.telefono,
+              correo: data.correo,
+              municipio: data.municipio,
+              estado: data.estado,
+              password: data.password
+            });
+          })
+          .catch(error => {
+            console.error('Error al obtener datos:', error);
+          });
+      }, []);
     useEffect(() => {
         const cita = [{
             FechaCita: "20 de Octubre - 04:30 PM",

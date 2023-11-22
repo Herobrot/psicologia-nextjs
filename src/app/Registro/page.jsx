@@ -6,7 +6,7 @@ import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
-
+import { saveAuthData, getAuthData, clearAuthData } from "../../../Token"
 
 
 
@@ -148,14 +148,20 @@ export default function Registro(){
                             correo: correo,
                             password: pass
                         }                            
-                        const result = await fetch("https://apibuena.onrender.com/paciente", {
+                        const response = await fetch("https://apibuena.onrender.com/paciente", {
                         method: "post",
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify(item),
-                    }).then(response => {
-                        console.log(response.json());
+                    }).then(async (response) => {
+                        if (response.ok) {
+                            const result = await response.json();
+                            console.log(result);
+                            console.log(result.result._id);
+                            saveAuthData(result.token,result.result._id)
+                            
+                        }
                     })
                         
                     Swal.fire({
