@@ -1,5 +1,3 @@
-import Navbar from '../../../components/Navbar';
-
 export const metadata = {
     charset: "UTF-8",
     title: "Inicio de sesión",
