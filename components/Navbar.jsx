@@ -5,16 +5,59 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { useSession } from "next-auth/react";
+import { useEffect,useState } from "react";
+import { saveAuthData, getAuthData, clearAuthData } from "../Token"
 
 config.autoAddCss = false;
 
 export default function Navbar(){
-    const { data: session, status } = useSession();
+    const authData = getAuthData();
+    const [getUser,setUser]=useState(false);
     const [menu, setMenu] = useState(true);
+    const [usuario, setUsuario] = useState({
+        nombre: "",
+        apellidos: "",
+        telefono: "",
+        correo: "",
+        municipio: "",
+        estado: "",
+        password: ""
+    });
+    if(authData.userId){
+        useEffect(() => {
 
-    if(!session){
+            fetch('https://apibuena.onrender.com/paciente/' + authData.userId, {
+                headers: {
+                    'Authorization': `${authData.token}`,
+                    'Content-Type': 'application/json'
+    
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        clearAuthData();
+                        setUser(false);
+                        window.location = "/"
+                    }
+                    setUser(true);
+                    setUsuario({
+                        nombre: data.nombre,
+                        apellidos: data.apellidos,
+                        telefono: data.telefono,
+                        correo: data.correo,
+                        municipio: data.municipio,
+                        estado: data.estado,
+                        password: data.password
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener datos:', error);
+                });
+        }, []);
+    }
+   
+    if(!getUser){
         return(
             <header>
                 <nav>
@@ -82,7 +125,7 @@ export default function Navbar(){
                             window.location="/"
                         }} /></li>
                         <li>
-                            <p>{session.user.nombre} <br />{session.user.apellidos}</p>    
+                            <p>{usuario.nombre} <br />{usuario.apellidos}</p>    
                         </li>
                         <li>                        
                             <a href={"/Perfil"} className="menu" onClick={() => {

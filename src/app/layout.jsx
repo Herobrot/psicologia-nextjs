@@ -1,4 +1,4 @@
-import SessionAuthProvider from "@/context/SessionAuthProvider"
+
 import "./globals.css"
 
 export const metadata = {
