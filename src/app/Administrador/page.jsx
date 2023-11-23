@@ -42,21 +42,21 @@ export default function Admin(){
                 <div className="listaNav">
                     <div className="boton">
                         <FontAwesomeIcon icon={faUsers} />
-                        <Link href={"/Administrador/Pacientes"}>
+                        <a href={"/Administrador/Pacientes"}>
                             Pacientes
-                        </Link>
+                        </a>
                     </div>
                     <div className="boton">
                         <FontAwesomeIcon icon={faCalendarDay} />
-                        <Link href={"/Administrador/Pendientes"}>
+                        <a href={"/Administrador/Pendientes"}>
                             Citas por aprobar
-                        </Link>
+                        </a>
                     </div>
                     <div className="boton">
                         <FontAwesomeIcon icon={faFileLines} />
-                        <Link href={"/Administrador/Historial"}>
+                        <a href={"/Administrador/Historial"}>
                             Historial
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </main>

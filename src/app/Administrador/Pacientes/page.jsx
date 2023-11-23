@@ -41,9 +41,9 @@ export default function AdminPacientes(){
         <>
             <main>
                 <div className="cabecera">
-                    <Link href="/Administrador">
+                    <a href="/Administrador">
                         <FontAwesomeIcon icon={faChevronLeft} />
-                    </Link>
+                    </a>
                     <h2>Pacientes.</h2>
                 </div>
                 <div className="buscador">

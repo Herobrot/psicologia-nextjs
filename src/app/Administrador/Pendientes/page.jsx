@@ -50,9 +50,9 @@ export default function AdminPendientes(){
     return(
         <>
             <div className="cabecera">
-                <Link href="/Administrador">
+                <a href="/Administrador">
                     <FontAwesomeIcon icon={faChevronLeft} />
-                </Link>
+                </a>
                 <h2>Pendientes.</h2>
             </div>
 
@@ -79,6 +79,6 @@ export default function AdminPendientes(){
                 )}
             </div>
         </div>
-        </>
+        </main>
     );
 }
