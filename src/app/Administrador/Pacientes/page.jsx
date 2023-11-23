@@ -1,13 +1,14 @@
 "use client"
-
 import { faChevronLeft, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Pacientes from "./components/Pacientes";
 import { useEffect, useState } from "react";
+
 export default function AdminPacientes(){
     const [listaPacientes, setListaPacientes] = useState([]);
     const [busqueda, setBusqueda] = useState("");
+
     const handleSearchChange = (e) => {
         setBusqueda(e.target.value);
     };
@@ -18,8 +19,8 @@ export default function AdminPacientes(){
         return nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
                apellido.toLowerCase().includes(busqueda.toLowerCase());
     });
+
     useEffect(() => {
-      
         fetch('https://apibuena.onrender.com/paciente')
             .then(response => {
                 if (response.ok) {
@@ -35,7 +36,8 @@ export default function AdminPacientes(){
                 console.error('Error:', error);
             });
     }, []); 
-    return(
+
+    return (
         <>
             <main>
                 <div className="cabecera">
@@ -57,9 +59,9 @@ export default function AdminPacientes(){
                     </label>
                 </div>
                 <div className="contenedorPacientes">
-                    <div className={listaPacientes ? "contenidoPacientes" : "ocultarContenido"}>
-                        <Pacientes pacientes={listaPacientes} />
-                        <p className={listaPacientes ? "ocultarTexto" : "defaultTexto"}>
+                    <div className={pacientesFiltrados.length > 0 ? "contenidoPacientes" : "ocultarContenido"}>
+                        <Pacientes pacientes={pacientesFiltrados} /> 
+                        <p className={pacientesFiltrados.length == 0 ? "defaultTexto" : "ocultarTexto"}>
                             No hay pacientes
                         </p>
                     </div>

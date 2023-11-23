@@ -48,7 +48,7 @@ export default function AdminPendientes(){
     ));
 
     return(
-        <main>
+        <>
             <div className="cabecera">
                 <Link href="/Administrador">
                     <FontAwesomeIcon icon={faChevronLeft} />
