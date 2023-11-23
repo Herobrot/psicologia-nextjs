@@ -7,8 +7,10 @@ import { es } from "date-fns/locale";
 import { useState } from "react";
 import Link from "next/link";
 import { forwardRef } from "react";
+import "../Historial/Historial.css"
 import "react-datepicker/dist/react-datepicker.css";
 import Citas from "./components/Citas";
+
 registerLocale('es', es);
 
 export default function AdminHistorial(){
@@ -25,7 +27,7 @@ export default function AdminHistorial(){
     ));
 
     return(
-        <>
+        <main>
             <div className="cabecera">
                 <Link href="/Administrador">
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -37,34 +39,39 @@ export default function AdminHistorial(){
                     <p>Filtrar</p>
                     <p>Ordenar</p>
                 </div>
-                <div className="filtradoSelectGrid">
-                    <DatePicker
-                        dropdownMode="select"
-                        customInput={<ExampleCustomInput />} 
-                        locale={es}
-                        minDate={new Date()}
-                        selected={startDate1}
-                        dateFormat={"dd"} 
-                        onChange={(date) => setStartDate1(date)} />
-                    <DatePicker
-                        dropdownMode="select"
-                        customInput={<ExampleCustomInput />} 
-                        locale={es}
-                        minDate={new Date()}
-                        selected={startDate2} 
-                        dateFormat={"MM"}
-                        showMonthYearPicker                
-                        onChange={(date) => setStartDate2(date)} />
-                    <DatePicker
-                        dropdownMode="select"
-                        customInput={<ExampleCustomInput />} 
-                        locale={es}
-                        minDate={new Date()}
-                        selected={startDate3} 
-                        dateFormat={"yy"}
-                        showYearPicker
-                        onChange={(date) => setStartDate3(date)} />
-                    <select value={filtro} onChange={(ev) => {setFiltro(ev.target.value)}}>
+                <div className="filtradoSelect">
+                    <div>
+                        <DatePicker
+                            id="item1"
+                            dropdownMode="select"
+                            customInput={<ExampleCustomInput />} 
+                            locale={es}
+                            minDate={new Date()}
+                            selected={startDate1}
+                            dateFormat={"dd"} 
+                            onChange={(date) => setStartDate1(date)} />
+                        <DatePicker
+                            id="item2"
+                            dropdownMode="select"
+                            customInput={<ExampleCustomInput />} 
+                            locale={es}
+                            minDate={new Date()}
+                            selected={startDate2} 
+                            dateFormat={"MM"}
+                            showMonthYearPicker                
+                            onChange={(date) => setStartDate2(date)} />
+                        <DatePicker
+                            id="item3"
+                            dropdownMode="select"
+                            customInput={<ExampleCustomInput />} 
+                            locale={es}
+                            minDate={new Date()}
+                            selected={startDate3} 
+                            dateFormat={"yy"}
+                            showYearPicker
+                            onChange={(date) => setStartDate3(date)} />
+                    </div>
+                    <select id="item4" value={filtro} onChange={(ev) => {setFiltro(ev.target.value)}}>
                         <option value="Más antiguo">Más antiguo</option>
                         <option value="Más reciente">Más reciente</option>
                     </select>
@@ -76,6 +83,6 @@ export default function AdminHistorial(){
                     <p className={contenidoHistorial ? "ocultarTexto" : "defaultTexto"}>Historial vacío.</p>
                 </div>
             </div>
-        </>
+        </main>
     );
 }

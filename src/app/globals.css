@@ -9,6 +9,12 @@
     --primary-user-bg-color: #6C70E5;
     --primary-user-button-color: rgb(3, 65, 141);
     --secondary-user-bg-color: #9093E8;
+
+    --primaryAdmin-bg-color: #4BABAB;
+    --secundaryAdmin-bg-color: #0C0E44;
+
+    --primaryAdmin-a-bg-color: rgb(1, 172, 1);
+;
 }
 
 main{
