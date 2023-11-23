@@ -10,6 +10,9 @@ import { forwardRef } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Pendientes.css";
 import { format } from 'date-fns';
+import Swal from "sweetalert2";
+
+
 registerLocale('es', es);
 
 export default function AdminPendientes(){
@@ -19,6 +22,87 @@ export default function AdminPendientes(){
     const [startDate2, setStartDate2] = useState(new Date());
     const [startDate3, setStartDate3] = useState(new Date());
     const [filtro, setFiltro] = useState("Más antiguo");
+
+    const AprobarCancelar = ({cita}) =>{
+        Swal.fire({
+            title: "Modificar cita",
+            text: "¿Desea aprobar esta cita o cancelarla?",
+            showDenyButton: true,
+            showConfirmButton: true,
+            denyButtonText: "Cancelar",
+            confirmButtonText: "Aprobar",
+            denyButtonColor: "red",
+            confirmButtonColor: "blue",
+            focusDeny: false,
+            focusConfirm: true,
+            buttonsStyling: false,
+            customClass: {
+                title: "swal-title",
+                popup: "swal-popup",
+                actions: "swal-actions",
+                denyButton: "swal-Cancelar",
+                confirmButton: "swal-Aprobar"
+            }
+        }).then((result) => {
+            if(result.isDenied){
+                Swal.fire({
+                    icon: "warning",
+                    title: "A punto de cancelarla...",
+                    text: "Va a cancelar la cita, ¿esta seguro de su desición?",
+                    showDenyButton: true,
+                    showConfirmButton: true,
+                    denyButtonText: "No",
+                    confirmButtonText: "Sí",
+                    denyButtonColor: "red",
+                    confirmButtonColor: "blue",
+                    focusDeny: false,
+                    focusConfirm: true,
+                    buttonsStyling: false,
+                    customClass: {
+                        title: "swal-title",
+                        popup: "swal-popup",
+                        actions: "swal-actions",
+                        denyButton: "swal-No",
+                        confirmButton: "swal-Si"
+                    }
+                }).then((result) => {
+                    if(result.isConfirmed){
+                        //Código de la api para eliminar el objeto
+                        //Refrescarlo con windows.location
+                    }
+                })
+            }
+            else if(result.isConfirmed){
+                Swal.fire({
+                    icon: "warning",
+                    title: "A punto de aprobarla...",
+                    text: "Va a aprobar la cita, ¿esta seguro de su desición?",
+                    showDenyButton: true,
+                    showConfirmButton: true,
+                    denyButtonText: "No",
+                    confirmButtonText: "Sí",
+                    denyButtonColor: "red",
+                    confirmButtonColor: "blue",
+                    focusDeny: false,
+                    focusConfirm: true,
+                    buttonsStyling: false,
+                    customClass: {
+                        title: "swal-title",
+                        popup: "swal-popup",
+                        actions: "swal-actions",
+                        denyButton: "swal-No",
+                        confirmButton: "swal-Si"
+                    }
+                }).then((result) => {
+                    if(result.isConfirmed){
+                        //Código de la api para aprobar el objeto
+                        //Refrescarlo con windows.location
+                    }
+                })
+            }
+        })
+    }
+
     useEffect(() => {
         fetch('https://apibuena.onrender.com/cita/') 
             .then(response => response.json())
@@ -48,7 +132,7 @@ export default function AdminPendientes(){
     ));
 
     return(
-        <>
+        <main>
             <div className="cabecera">
                 <a href="/Administrador">
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -67,10 +151,9 @@ export default function AdminPendientes(){
                 </div>
                 <div className="contenedorPendientes">
             <div className={contenidoPendientes.length > 0 ? "contenidoPendientes" : "ocultarContenido"}>
-                {contenidoPendientes.length > 0 ? (
+                {contenidoPendientes.length != 0 ? (
                     contenidoPendientes.map((cita, index) => (
-                        <div key={index}>
-                       
+                        <div key={index} onClick={() => {AprobarCancelar(cita)}}>
                             <p>Fecha de la cita: {format(new Date(cita.FechaCita), 'dd/MM/yyyy')}</p>
                         </div>
                     ))

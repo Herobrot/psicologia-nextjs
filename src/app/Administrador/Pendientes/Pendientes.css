@@ -97,4 +97,45 @@
     background: var(--primary-bg-color);
     color:aliceblue;
     font-family: 'Blinker';
+  }
+
+  .swal-popup{
+    width: 80%;
+    background: rgb(238, 238, 238);
+}
+
+.swal-title{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.swal-html{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: 700;
+    font-size: 120%;
+}
+
+.swal-actions{
+    justify-content: space-around;
+    width: 100%;
+}
+
+.swal-Si, .swal-No{
+    border: 0;
+    color: aliceblue;
+    border-radius: 100%;
+    width: 15vw;
+    height: 15vw;
+}
+.swal-No{
+    background: rgb(178, 13, 13);
+    font-size: 150%;
+}
+
+.swal-Si{
+    background: rgb(15, 15, 192);
+    font-size: 150%;
 }
