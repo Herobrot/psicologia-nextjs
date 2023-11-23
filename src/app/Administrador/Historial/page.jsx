@@ -40,9 +40,9 @@ export default function AdminHistorial(){
     return(
         <main>
             <div className="cabecera">
-                <Link href="/Administrador">
+                <a href="/Administrador">
                     <FontAwesomeIcon icon={faChevronLeft} />
-                </Link>
+                </a>
                 <h2>Historial.</h2>
             </div>
             <div className="filtradoMes">
