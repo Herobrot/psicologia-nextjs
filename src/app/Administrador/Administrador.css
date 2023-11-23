@@ -1,0 +1,126 @@
+main{
+    background: var(--primary-bg-color);
+    font-family: 'Blinker';
+    padding-top: 10%;
+    padding-inline: 6%;
+    height: 100vh;
+    color:aliceblue;
+}
+
+main > svg{
+    font-size: 150%;
+    padding-block: 1%;
+    font-weight: 200;
+    border-radius: 20px;
+    width: 60%;
+    background: var(--primary-a-bg-color);
+    color: aliceblue;
+    display: inline-block;
+    border: 0;
+}
+
+main > h1{
+    padding-bottom: 5%;
+}
+
+main > div{
+    margin-block: 5%;
+}
+
+main > div > .contenedorProCit{
+    padding: 1.5%;
+    overflow-y: scroll;
+}
+
+main > div > p{
+    font-size: 120%;
+}
+
+main > div > div{
+    margin-top: 4%;
+    border-radius: 10px;
+    height: 40vw;
+    width: 100%;
+    background-color: var(--primary-user-bg-color);
+}
+
+main > div > div > .contenidoCitas{
+    display: grid;
+    row-gap: 5px;
+}
+
+main > div > div > div{
+    position: relative;
+}
+
+main > div > div > div > .defaultTexto{
+    text-align: center;
+    padding-top: 17%;
+}
+
+main > div > div > div > .ocultarTexto{
+    display: none;
+}
+
+main > div.botonesNav{
+    margin-top: 15%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+main > div.botonesNav > button{
+    border: 0;
+    width: fit-content;
+    height: auto;
+    border-radius: 100%;
+    padding: 3%;
+    background-color: var(--primary-user-bg-color);
+}
+
+main > div.botonesNav > button > svg{
+    height: auto;
+    width: 12vw;
+    color: var(--primary-user-button-color);
+}
+
+.swal-popup{
+    width: 80%;
+    background: rgb(238, 238, 238);
+}
+
+.swal-title{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.swal-html{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: 700;
+    font-size: 120%;
+}
+
+.swal-actions{
+    justify-content: space-around;
+    width: 100%;
+}
+
+.swal-Si, .swal-No{
+    border: 0;
+    color: aliceblue;
+    border-radius: 100%;
+    width: 15vw;
+    height: 15vw;
+}
+.swal-No{
+    background: rgb(178, 13, 13);
+    font-size: 150%;
+}
+
+.swal-Si{
+    background: rgb(15, 15, 192);
+    font-size: 150%;
+}

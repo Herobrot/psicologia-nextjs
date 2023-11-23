@@ -10,6 +10,7 @@ main{
 main > div{
     display: flex;
     align-items: center;
+    border-radius: 5px;
 }
 
 main > div.cabecera{
@@ -40,7 +41,6 @@ main > div.filtradoMes > div.filtradoTxt{
 
 main > div.filtradoMes > div > p{
     text-align: center;
-    
     font-size: 120%;
 }
 
@@ -62,42 +62,24 @@ div.filtradoSelect > select{
     margin: 0 auto;
 }
 
-main > div > div > .contenidoCitas{
+main > div.contenedorHistorial{
+    overflow-y: scroll;
+    margin-top: 5%;
+    background: var(--secundaryAdmin-bg-color);
     display: grid;
     row-gap: 5px;
 }
 
-main > div > div > div{
+main > div.contenedorHistorial > div{
     position: relative;
 }
 
-main > div > div > div > .defaultTexto{
+main > div.contenedorHistorial > div > .defaultTexto{
     text-align: center;
+    font-size: 0.9em;
     padding-top: 17%;
 }
 
-main > div > div > div > .ocultarTexto{
+main > div.contenedorHistorial > div > .ocultarTexto{
     display: none;
-}
-
-main > div.botonesNav{
-    margin-top: 15%;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-main > div.botonesNav > button{
-    border: 0;
-    width: fit-content;
-    height: auto;
-    border-radius: 100%;
-    padding: 3%;
-    background-color: var(--primary-user-bg-color);
-}
-
-main > div.botonesNav > button > svg{
-    height: auto;
-    width: 12vw;
-    color: var(--primary-user-button-color);
 }

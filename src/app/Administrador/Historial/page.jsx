@@ -80,7 +80,7 @@ export default function AdminHistorial(){
             <div className="contenedorHistorial">
                 <div className={contenidoHistorial ? "contenidoHistorial" : "ocultarContenido"}>
                     {/*Implementar aquí <Citas />*/}
-                    <p className={contenidoHistorial ? "ocultarTexto" : "defaultTexto"}>Historial vacío.</p>
+                    <p className={contenidoHistorial.length!=0 ? "ocultarTexto" : "defaultTexto"}>Historial vacío.</p>
                 </div>
             </div>
         </main>
