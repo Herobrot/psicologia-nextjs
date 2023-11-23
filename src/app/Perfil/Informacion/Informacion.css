@@ -53,8 +53,8 @@ main > div > ul > li > input:focus{
 
 main > div > input[type=radio]{
     margin: 3% 1%;
-    height: 15px;
-    width: 15px;
+    height: 15%;
+    width: 15%;
 }
 
 main > div > ul > li > div.Valido{

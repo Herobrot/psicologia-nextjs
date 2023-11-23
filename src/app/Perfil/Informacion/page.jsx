@@ -199,7 +199,7 @@ export default function Registro(){
             <main>
             <div className="buttons">
                     <button type="button" className="Return" onClick={() => {
-                        Salir();
+                        Continuar();
                     }}>
                         <FontAwesomeIcon icon={ faChevronLeft } />
                     </button>
