@@ -5,6 +5,11 @@
     display: flex;
     align-items: center;
     margin-bottom: 2%;
+    margin: 3%;
+    box-sizing: border-box;
+    background: var(--primary-bg-color);
+    color:aliceblue;
+    font-family: 'Blinker';
   }
   
   .cabecera h2 {
@@ -86,7 +91,7 @@
   .DatePickerStyle {
     /* Estilos para personalizar el aspecto del botón del DatePicker */
   }
-  *{
+  main{
     margin: 3%;
     box-sizing: border-box;
     background: var(--primary-bg-color);

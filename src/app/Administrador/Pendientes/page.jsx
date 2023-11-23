@@ -26,7 +26,7 @@ export default function AdminPendientes(){
     ));
 
     return(
-        <>
+        <main>
             <div className="cabecera">
                 <Link href="/Administrador">
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -49,6 +49,6 @@ export default function AdminPendientes(){
                     <p className={contenidoPendientes ? "ocultarTexto" : "defaultTexto"}>Sin proximas citas.</p>
                 </div>
             </div>
-        </>
+        </main>
     );
 }

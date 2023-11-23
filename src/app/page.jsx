@@ -1,3 +1,5 @@
+"use client"
+
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,7 +22,7 @@ export default function Home(){
                         <p>
                             Servicios de psicologia y pedagogia para pacientes, agenta tu cita a como mejor se adapte a sus necesidades, desde casa, sin salir.
                         </p>
-                        <div className="agendar">
+                        <div className="agendar" onClick={() => window.location="/Registro"}>
                             <h3>Agendar una cita</h3>
                             <FontAwesomeIcon icon={faCalendarPlus} />
                         </div>
