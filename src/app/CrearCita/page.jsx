@@ -16,6 +16,7 @@ export default function Cita() {
         minute: format(new Date(), 'mm'),
         period: format(new Date(), 'aa').toUpperCase(),
     });
+    const [modalidadget,setmodalidad] =useState('');
     const authData = getAuthData();
     const hours = Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0'));
     const minutes = Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0'));
@@ -68,7 +69,11 @@ export default function Cita() {
                 console.error('Error al obtener datos:', error);
             });
     }, []);
+
+
     const handleConfirm = () => {
+
+        const fechaCita = convertToDateTime(selectedTime.hour, selectedTime.minute, selectedTime.period);
         Swal.fire({
             title: 'Desea confirmar su cita?',
             text: `${usuario.nombre +" "+ usuario.apellidos}  Tu cita sera agendada para el ${format(selectedDate, 'dd/MM/yyyy')} a las ${format(selectedDate, 'hh:mm aa')}`,
@@ -80,7 +85,7 @@ export default function Cita() {
             cancelButtonText: 'Salir'
         }).then((result)=>{
             if(result.value){
-                fetch('https://apibuena.onrender.com/agregarCita', {
+                fetch('https://apibuena.onrender.com/paciente/agregarCita', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -89,10 +94,10 @@ export default function Cita() {
                     body: JSON.stringify({
                         idPaciente: authData.userId,
                         datosCita: {
-                            FechaCita: selectedTime, 
+                            FechaCita: fechaCita, 
                             EstatusCita: 'Agendada', 
-                            NotasCitas: '', 
-                            modalidad: '', 
+                            NotasCitas: 'Agendada', 
+                            modalidad: modalidadget, 
                             idUser: authData.userId 
                         }
                     })
@@ -110,16 +115,25 @@ export default function Cita() {
                     })
                   
                 })
-              
                 .catch(error => console.error('Error:', error));
 
-
-
-                
             }
         });
     };
-
+    function convertToDateTime(hour, minute, period) {
+        const now = new Date();
+        let hours = parseInt(hour);
+    
+      
+        if (period === 'PM' && hours < 12) {
+            hours += 12;
+        } else if (period === 'AM' && hours === 12) {
+            hours = 0;
+        }
+    
+        now.setHours(hours, parseInt(minute));
+        return now;
+    }
     const handleCancel = () => {
         Swal.fire({
             title: 'Cita No Guardada',
@@ -160,6 +174,16 @@ export default function Cita() {
                 <select onChange={(e) => handleTimeChange(e, 'period')} value={selectedTime.period}>
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>
+                </select>
+            </div>
+            <div className="time-selector">
+            <label>Eliga su modalidad:</label>
+             
+                <select onChange={(ev) => {
+                                setmodalidad(ev.target.value)
+                            }} >
+                    <option value="En línea">Virtual</option>
+                    <option value="Presencial">Presencial</option>
                 </select>
             </div>
             <div className="date-confirm">

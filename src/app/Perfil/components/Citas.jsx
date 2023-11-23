@@ -34,7 +34,7 @@ export default function Citas({citas, usuario}){
             }
         }).then((result) => {
             if(result.isDenied){
-                fetch(`https://apibuena.onrender.com/cita/${cita.user}`, {
+                fetch(`https://apibuena.onrender.com/cita/${cita._id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
