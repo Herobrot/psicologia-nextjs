@@ -8,12 +8,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { forwardRef } from "react";
 import "react-datepicker/dist/react-datepicker.css";
+import "./Pendientes.css";
 
 registerLocale('es', es);
 
 export default function AdminPendientes(){
     //Constante que almacenara el arreglo de citas ya realizadas
-    const [contenidoHistorial, setContenidoHistorial] = useState([]);
+    const [contenidoPendientes, setContenidoPendientescontenidoPendientes] = useState([]);
     const [startDate1, setStartDate1] = useState(new Date());
     const [startDate2, setStartDate2] = useState(new Date());
     const [startDate3, setStartDate3] = useState(new Date());
@@ -32,21 +33,20 @@ export default function AdminPendientes(){
                 </Link>
                 <h2>Pendientes.</h2>
             </div>
-            <div className="filtradoMes">
+
                 <div className="filtradoTxt">
-                    <p>Ordenar</p>
-                </div>
+                      <br></br>Ordenar
                 <div className="filtradoSelectGrid">
                     <select value={filtro} onChange={(ev) => {setFiltro(ev.target.value)}}>
                         <option value="Más antiguo">Más antiguo</option>
                         <option value="Más reciente">Más reciente</option>
                     </select>
                 </div>
-            </div>
-            <div className="contenedorHistorial">
-                <div className={contenidoHistorial ? "contenidoHistorial" : "ocultarContenido"}>
+                </div>
+            <div className="contenedorPendientes">
+                <div className={contenidoPendientes ? "contenidoPendientes" : "ocultarContenido"}>
                     {/*Implementar aquí <Citas />*/}
-                    <p className={contenidoHistorial ? "ocultarTexto" : "defaultTexto"}>Sin proximas citas.</p>
+                    <p className={contenidoPendientes ? "ocultarTexto" : "defaultTexto"}>Sin proximas citas.</p>
                 </div>
             </div>
         </>

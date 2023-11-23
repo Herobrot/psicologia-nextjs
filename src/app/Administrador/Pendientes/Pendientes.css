@@ -1,0 +1,95 @@
+/* Estilos para el componente AdminPendientes */
+
+/* Cabecera */
+.cabecera {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+  }
+  
+  .cabecera h2 {
+    display: flex;
+    margin-bottom: 0%;
+    margin-left: 5%;
+    font-family: 'Blinker';
+    padding-inline: 6%;
+    color:aliceblue;
+  }
+  
+  /* Icono de flecha */
+  .cabecera svg {
+
+    cursor: pointer;
+  }
+  
+  
+  .filtradoTxt {
+    font-family: 'Blinker';
+    padding-inline: 4%;
+    background: #0C0E44;
+    width: 90%;
+    height: 100%;
+    margin-bottom: 0%;;
+    margin-right: 5%;
+    border-radius: 10px;
+  }
+  
+  .filtradoSelectGrid {
+    flex-grow: 1;
+    background: #0C0E44;
+    margin-left: -4%;
+  }
+  
+  /* Contenedor de Pendientes */
+  .contenedorPendientes {
+    margin-top: 10%;
+    background: #0C0E44;
+    font-family: 'Blinker';
+    padding-inline: 6%;
+    color:aliceblue;
+    width: 90%;
+    border-radius: 10px;
+  }
+  
+  /* Contenido de Pendientes */
+  .contenidoPendientes {
+    background: #0C0E44;
+    margin-right: 5%;
+    /* Estilos para el contenido de las citas pendientes */
+  }
+  
+  /* Ocultar Contenido */
+  .ocultarContenido {
+    background: #0C0E44;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  /* Texto Predeterminado */
+  .defaultTexto {
+    /* Estilos para el texto predeterminado */
+  }
+  
+  /* Ocultar Texto */
+  .ocultarTexto {
+    background: #0C0E44;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilos para el botón del DatePicker */
+  .DatePickerStyle {
+    /* Estilos para personalizar el aspecto del botón del DatePicker */
+  }
+  *{
+    margin: 3%;
+    box-sizing: border-box;
+    background: var(--primary-bg-color);
+    color:aliceblue;
+    font-family: 'Blinker';
+}

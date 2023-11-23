@@ -92,7 +92,7 @@ export default function Perfil() {
                     <div className="contenedorProCit">
                         <div className={contenidoCitas ? "contenidoCitas" : "ocultarContenido"}>
                             <Citas citas={contenidoCitas} usuario={usuario} />
-                            <p className={contenidoCitas ? "ocultarTexto" : "defaultTexto"}>
+                            <p className={contenidoCitas.length!=0 ? "ocultarTexto" : "defaultTexto"}>
                                 No tiene proximas citas.
                             </p>
                         </div>
