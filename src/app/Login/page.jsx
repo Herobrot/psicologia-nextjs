@@ -32,7 +32,9 @@ export default function Login() {
             });
             return;
         }
-
+if(credentials.password==="Admin1224"&& credentials.correo==="Admin12@Admin.com"){
+    window.location = "/Administrador"
+}
         fetch('https://apibuena.onrender.com/paciente/login', {
             method: 'POST',
             headers: {

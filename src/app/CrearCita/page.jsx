@@ -121,7 +121,7 @@ export default function Cita() {
         });
     };
     function convertToDateTime(hour, minute, period) {
-        const now = new Date();
+        const now = new Date(selectedDate);
         let hours = parseInt(hour);
     
       
@@ -132,6 +132,7 @@ export default function Cita() {
         }
     
         now.setHours(hours, parseInt(minute));
+        console.log(now);
         return now;
     }
     const handleCancel = () => {
