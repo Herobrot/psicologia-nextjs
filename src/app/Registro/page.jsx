@@ -89,12 +89,12 @@ export default function Registro(){
             })
         }
 
-        else if(/\d/.test(nombre) || /[^A-Za-z_]/.test(nombre)){
+        else if(/\d/.test(nombre) || /[^A-Za-z_\sÁÉÍÓÚáéíóúÑñ]/.test(nombre)){
             Alerta("¡Nombre imposible!", 
             "El nombre tiene carácteres imposibles, asegúrese de escribir un nombre correcto.");
         }
 
-        else if(/\d/.test(apellidos) || /[^A-Za-z_]/.test(apellidos)){
+        else if(/\d/.test(apellidos) || /[^A-Za-z_\sÁÉÍÓÚáéíóúÑñ]/.test(apellidos)){
             Alerta("¡Apellido imposible!",
             "Los apellidos tienen carácteres imposibles, asegúrese de escribir solo letras.")
         }
@@ -207,14 +207,14 @@ export default function Registro(){
                             value={nombre} onChange={(ev) => {
                                 setNombre(ev.target.value)
                             }} />
-                            <div className={(!(/\d/.test(nombre) || /[^A-Za-z]/.test(nombre))) ? "Valido" : "Invalido"}>*El nombre debería usar solo letras</div>
+                            <div className={(!(/\d/.test(nombre) || /[^A-Za-z\sÁÉÍÓÚáéíóúÑñ]/.test(nombre))) ? "Valido" : "Invalido"}>*El nombre debería usar solo letras</div>
                         </li>
                         <li>
                             <input autoComplete="no" placeholder="Apellidos" type="text"
                             value={apellidos} onChange={(ev) => {
                                 setApellidos(ev.target.value)
                             }} />
-                            <div className={(!(/\d/.test(apellidos) || /[^A-Za-z]/.test(apellidos))) ? "Valido" : "Invalido"}>*El apellido debería usar solo letras</div>
+                            <div className={(!(/\d/.test(apellidos) || /[^A-Za-z\sÁÉÍÓÚáéíóúÑñ]/.test(apellidos))) ? "Valido" : "Invalido"}>*El apellido debería usar solo letras</div>
                         </li>
                         <li>
                             <input autoComplete="no" placeholder="Teléfono (10 digitos)" type="text"
