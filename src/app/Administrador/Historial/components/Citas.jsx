@@ -1,5 +1,7 @@
 "use client"
 
+import "./Citas.css"
+
 export default function Citas({citas}){
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
