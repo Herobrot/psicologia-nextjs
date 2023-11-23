@@ -68,4 +68,13 @@ main > div > a{
 main > div > #btn-IS{
     background: #da9800;
     margin-block: 3%;
+    border: 0px;
+    margin-block: 4%;
+    border-radius: 20px;
+    background-color:#da9800;
+    color: white;
+    font-size: 130%;
+
+    height: 12vw;
+   
 }

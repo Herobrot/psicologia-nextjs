@@ -1,0 +1,169 @@
+main{
+    background: var(--primary-bg-color);
+    font-family: 'Blinker';
+    padding-inline: 6%;
+    height: 100vh;
+    color:aliceblue;
+}
+
+main > h1{
+    padding-bottom: 5%;
+}
+
+main > div{
+    margin-block: 5%;
+}
+
+main > div > .contenedorProCit{
+    padding: 1.5%;
+    overflow-y: scroll;
+}
+
+main > div > p{
+    font-size: 120%;
+}
+
+main > div > div{
+    margin-top: 4%;
+    border-radius: 10px;
+    height: 40vw;
+    width: 100%;
+    background-color: var(--primary-user-bg-color);
+}
+
+main > div > div > .contenidoCitas{
+    display: grid;
+    row-gap: 5px;
+}
+
+main > div > div > div{
+    position: relative;
+}
+
+main > div > div > div > .defaultTexto{
+    text-align: center;
+    padding-top: 17%;
+}
+
+main > div > div > div > .ocultarTexto{
+    display: none;
+}
+
+main > div.botonesNav{
+    margin-top: 15%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+main > div.botonesNav > button{
+    border: 0;
+    width: fit-content;
+    height: auto;
+    border-radius: 100%;
+    padding: 3%;
+    background-color: var(--primary-user-bg-color);
+}
+
+main > div.botonesNav > button > svg{
+    height: auto;
+    width: 12vw;
+    color: var(--primary-user-button-color);
+}.calendar-container {
+    width: 300px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .calendar-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .date-picker {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .date-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .date-picker-header button {
+    background: none;
+    border: 1px solid #cccccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .date-picker-month {
+    font-weight: bold;
+  }
+  
+  .date-picker-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+   
+  }
+  
+  .time-selector {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+  }
+  
+  .time-selector select {
+    border: 1px solid #cccccc;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .date-confirm {
+    text-align: center;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-around;
+    /* Más estilos aquí para los botones de acción */
+  }
+  
+  
+  .calendar-footer {
+    margin-top: 20px;
+    text-align: center;
+  }.cancel-button,
+  .confirm-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;}
