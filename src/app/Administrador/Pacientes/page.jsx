@@ -5,7 +5,7 @@ import Link from "next/link";
 import Pacientes from "./components/Pacientes";
 import { useEffect, useState } from "react";
 
-export default function AdminPacientes(){
+export default function AdminPacientes() {
     const [listaPacientes, setListaPacientes] = useState([]);
     const [busqueda, setBusqueda] = useState("");
 
@@ -14,10 +14,10 @@ export default function AdminPacientes(){
     };
 
     const pacientesFiltrados = listaPacientes.filter(paciente => {
-        const nombre = paciente.nombre || ""; 
-        const apellido = paciente.apellido || ""; 
+        const nombre = paciente.nombre || "";
+        const apellido = paciente.apellido || "";
         return nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-               apellido.toLowerCase().includes(busqueda.toLowerCase());
+            apellido.toLowerCase().includes(busqueda.toLowerCase());
     });
 
     useEffect(() => {
@@ -30,12 +30,12 @@ export default function AdminPacientes(){
                 }
             })
             .then(data => {
-                setListaPacientes(data); 
+                setListaPacientes(data);
             })
             .catch(error => {
                 console.error('Error:', error);
             });
-    }, []); 
+    }, []);
 
     return (
         <>
@@ -47,10 +47,10 @@ export default function AdminPacientes(){
                     <h2>Pacientes.</h2>
                 </div>
                 <div className="buscador">
-                    <input 
-                        type="text" 
-                        name="Buscador" 
-                        id="Buscador" 
+                    <input
+                        type="text"
+                        name="Buscador"
+                        id="Buscador"
                         value={busqueda}
                         onChange={handleSearchChange}
                     />
@@ -59,13 +59,17 @@ export default function AdminPacientes(){
                     </label>
                 </div>
                 <div className="contenedorPacientes">
-                    <div className={pacientesFiltrados.length > 0 ? "contenidoPacientes" : "ocultarContenido"}>
-                        <Pacientes pacientes={pacientesFiltrados} /> 
-                        <p className={pacientesFiltrados.length == 0 ? "defaultTexto" : "ocultarTexto"}>
+                    {pacientesFiltrados.length > 0 ? (
+                        <div className="contenidoPacientes">
+                            <Pacientes pacientes={pacientesFiltrados} />
+                        </div>
+                    ) : (
+                        <p className="defaultTexto">
                             No hay pacientes
                         </p>
-                    </div>
+                    )}
                 </div>
+
             </main>
         </>
     );
