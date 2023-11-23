@@ -2,7 +2,7 @@
 
 import "./Informacion.css"
 import Swal from "sweetalert2"
-import { useState } from "react"
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 import { saveAuthData, getAuthData, clearAuthData } from "../../../../Token"
@@ -16,7 +16,35 @@ export default function Registro(){
     const [correo, setCorreo] = useState("");
     const [pass, setPass] = useState("");
     const [auxPass, setAuxPass] = useState("");
+    const authData = getAuthData();
+    const [datosOriginales, setDatosOriginales] = useState({});
+    useEffect(() => {
 
+        fetch('https://apibuena.onrender.com/paciente/' + authData.userId, {
+            headers: {
+                'Authorization': `${authData.token}`,
+                'Content-Type': 'application/json'
+
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    clearAuthData();
+                    window.location = "/"
+                }
+               
+                setDatosOriginales(data);
+                setNombre(data.nombre);
+                setApellidos(data.apellidos);
+                setTelef(data.telefono);
+                setCorreo(data.correo);
+                setPass(data.password)
+            })
+            .catch(error => {
+                console.error('Error al obtener datos:', error);
+            });
+    }, []);
     const Alerta = (titulo, texto) => {
         Swal.fire({
             icon: "error",
@@ -35,7 +63,51 @@ export default function Registro(){
             }
         });
     }
-
+    const datosHanCambiado = () => {
+        return nombre !== datosOriginales.nombre ||
+               apellidos !== datosOriginales.apellidos ||
+               telef !== datosOriginales.telefono ||
+               correo !== datosOriginales.correo ||
+               pass !== datosOriginales.password;
+    };
+    
+    const enviarDatos = async () => {
+        if (!datosHanCambiado()) {
+            Alerta("Sin Cambios", "No se detectaron cambios en los datos.");
+            return;
+        }
+    
+    };
+    const actualizarDatos = async () => {
+        try {
+            const response = await fetch('https://apibuena.onrender.com/paciente/' + authData.userId, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `${authData.token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nombre,
+                    apellidos,
+                    telefono: telef,
+                    correo,
+                    password: pass
+                })
+            });
+    
+            const result = await response.json();
+            if (response.ok) {
+              
+                Swal.fire('Datos Actualizados', '', 'success');
+            } else {
+                
+                throw new Error(result.error);
+            }
+        } catch (error) {
+            Alerta("Error", error.message);
+        }
+    };
+    
     const Salir = () => {
         if(!nombre && !apellidos && !telef && !correo && !pass){
             window.location="/Perfil"
@@ -43,7 +115,7 @@ export default function Registro(){
 
         
 
-        else if(nombre || apellidos || telef || correo || pass ){
+        else if(nombre || apellidos || telef || correo || pass ||datosHanCambiado() ){
             Swal.fire({
                 title: "¡Hay datos guardados!",
                 text: "Esta apunto de salir. ¿Quiere terminar hacer los cambios?",
@@ -118,7 +190,7 @@ export default function Registro(){
             "Es recomendable que la contraseña tenga un mínimo de 8 carácteres");
         }
 
-        else{
+        if(datosHanCambiado()){
             Swal.fire({
                 title: "¿Confirmar datos?",
                 text: "Si aun no esta seguro, puede modificarlos.",
@@ -190,7 +262,13 @@ export default function Registro(){
                         });
                     }         
                 }
+                else {
+                    window.location = "/Perfil"
+                }
             })
+        }
+        else if(!datosHanCambiado()){
+            window.location = "/Perfil"
         }
     }
 
