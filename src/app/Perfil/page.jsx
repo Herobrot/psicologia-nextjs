@@ -78,6 +78,11 @@ export default function Perfil() {
                 window.location = "/CrearCita"
          
     };
+    const handleInfo = () => {
+       
+        window.location = "/Perfil/Informacion"
+ 
+};
     return (
         <>
             <main>
@@ -107,7 +112,7 @@ export default function Perfil() {
                     }}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
-                    <button type="button" title="Abrir información personal">
+                    <button type="button" title="Abrir información personal" onClick={handleInfo}>
                         <FontAwesomeIcon icon={faCircleUser} />
                     </button>
                     <button type="button" title="Agendar Cita" onClick={handleCita}>
