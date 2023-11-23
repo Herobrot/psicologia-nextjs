@@ -4,10 +4,26 @@ import { faChevronLeft, faMagnifyingGlass } from "@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Pacientes from "./components/Pacientes";
-
+import { useEffect, useState } from "react";
 export default function AdminPacientes(){
     const [listaPacientes, setListaPacientes] = useState([]);
-    
+    useEffect(() => {
+      
+        fetch('https://apibuena.onrender.com/paciente')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Error al obtener los pacientes');
+                }
+            })
+            .then(data => {
+                setListaPacientes(data); 
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }, []); 
     return(
         <>
             <main>

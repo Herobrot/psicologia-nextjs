@@ -1,0 +1,47 @@
+.entrada-correo {
+  height: 100px;
+  width: 350px;
+}
+
+.entrada-correo .overlap {
+  background-color: #213555;
+  border-radius: 10px;
+  height: 60px;
+  left: 7px;
+  position: relative;
+  top: 19px;
+  width: 336px;
+}
+
+.entrada-correo .overlap-group-wrapper {
+  height: 45px;
+  left: 8px;
+  position: relative;
+  top: 8px;
+  width: 320px;
+}
+
+.entrada-correo .overlap-group {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #4e4e4e;
+  border-radius: 20px;
+  height: 47px;
+  left: -1px;
+  position: relative;
+  top: -1px;
+  width: 322px;
+}
+
+.entrada-correo .text-wrapper {
+  color: #4e4e4e80;
+  font-family: "Blinker-ExtraLight", Helvetica;
+  font-size: 30px;
+  font-weight: 200;
+  left: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 3px;
+  white-space: nowrap;
+}

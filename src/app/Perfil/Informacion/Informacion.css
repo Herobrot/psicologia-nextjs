@@ -1,0 +1,163 @@
+main{
+    background: #0c0c93;
+    color: aliceblue;
+    height: 100vh;
+    font-family: 'Blinker';
+    padding-top: 20%;
+    padding-left: 7%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+main > h1{
+    font-size: 180%;
+    color: aliceblue;
+}
+main > p{
+    font-size: 90%;
+    background: aliceblue;
+}
+
+main > div{
+    width: 90%;
+    text-align: center;
+    padding-top: 9%;
+}
+
+main > div > ul{
+    background: #050552;
+    padding: 5% 0;
+    border-radius: 10px;
+    margin: 0;
+    list-style: none;
+}
+
+main > div > ul > li{
+    padding-block: 3%;
+}
+
+main > div > ul > li > input{
+    border: 0;
+    border-radius: 20px;
+    height: 9vw;
+    width: 80%;
+    font-size: 130%;
+    padding-left: 3%;
+}
+
+main > div > ul > li > input:focus{
+    outline: none;
+}
+
+
+main > div > input[type=radio]{
+    margin: 3% 1%;
+    height: 15px;
+    width: 15px;
+}
+
+main > div > ul > li > div.Valido{
+    opacity: 0;
+    display: block;
+    font-size: 0;
+    color:rgb(255, 80, 80);
+    visibility: hidden;
+    transition: opacity 0.3s, font-size 0.3s;
+}
+
+main > div > ul > li > div.Invalido{
+    opacity: 1;
+    font-size: 105%;
+    padding-top: 2%;
+    color:rgb(255, 80, 80);
+    transition: opacity 0.3s, font-size 0.3s;
+}
+
+
+main > div.buttons{
+    position: relative;
+    left: 5%;
+    width: 50%;
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main > div.buttons > button{
+    border: 0;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 100%;
+}
+
+main > div.buttons > button.Return{
+    background: rgb(39, 2, 117);
+
+}
+
+main > div.buttons > button.check{
+    background: rgb(15, 15, 192);
+}
+
+main > div.buttons > button > svg{
+    font-size: 300%;
+    color: aliceblue;
+}
+
+main > div.buttons > button > svg.fa-check{
+    font-size: 265%;
+    padding-block: 7.8%;
+}
+
+.swal-popup{
+    width: 80%;
+    background: rgb(238, 238, 238);
+}
+
+.swal-title{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.swal-html{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: 700;
+    font-size: 120%;
+}
+
+.swal-actions{
+    justify-content: space-around;
+    width: 100%;
+}
+
+.swal-X, .swal-Check, .swal-Si, .swal-No{
+    border: 0;
+    color: aliceblue;
+    border-radius: 100%;
+    width: 15vw;
+    height: 15vw;
+}
+
+.swal-X{    
+    font-size: 300%;
+    background: rgb(178, 13, 13);
+}
+
+.swal-Check{
+    font-size: 265%;
+    background: rgb(15, 15, 192);
+}
+
+.swal-No{
+    background: rgb(178, 13, 13);
+    font-size: 150%;
+}
+
+.swal-Si{
+    background: rgb(15, 15, 192);
+    font-size: 150%;
+}
