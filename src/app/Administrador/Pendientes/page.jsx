@@ -140,28 +140,28 @@ export default function AdminPendientes(){
                 <h2>Pendientes.</h2>
             </div>
 
-                <div className="filtradoTxt">
-                      <br></br>Ordenar
-                <div className="filtradoSelectGrid">
+            <div className="ordenarPendientes">
+                Ordenar
+                <div className="ordenarSelectGrid">
                     <select value={filtro} onChange={(ev) => {setFiltro(ev.target.value)}}>
                         <option value="Más antiguo">Más antiguo</option>
                         <option value="Más reciente">Más reciente</option>
                     </select>
                 </div>
-                </div>
-                <div className="contenedorPendientes">
-            <div className={contenidoPendientes.length > 0 ? "contenidoPendientes" : "ocultarContenido"}>
-                {contenidoPendientes.length != 0 ? (
-                    contenidoPendientes.map((cita, index) => (
-                        <div key={index} onClick={() => {AprobarCancelar(cita)}}>
-                            <p>Fecha de la cita: {format(new Date(cita.FechaCita), 'dd/MM/yyyy')}</p>
-                        </div>
-                    ))
-                ) : (
-                    <p className="defaultTexto">Sin próximas citas.</p>
-                )}
             </div>
-        </div>
+            <div className="contenedorPendientes">
+                <div className={contenidoPendientes.length > 0 ? "contenidoPendientes" : "ocultarContenido"}>
+                    {contenidoPendientes.length != 0 ? (
+                        contenidoPendientes.map((cita, index) => (
+                            <div key={index} onClick={() => {AprobarCancelar(cita)}}>
+                                <p>Fecha de la cita: {format(new Date(cita.FechaCita), 'dd/MM/yyyy')}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p className="defaultTexto">Sin próximas citas.</p>
+                    )}
+                </div>
+            </div>
         </main>
     );
 }
