@@ -1,0 +1,147 @@
+/* Estilos para el componente AdminPendientes */
+
+/* Cabecera */
+.cabecera {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+  margin: 3%;
+  box-sizing: border-box;
+  background: var(--primary-bg-color);
+  color:aliceblue;
+  font-family: 'Blinker';
+}
+
+.cabecera h2 {
+  display: flex;
+  margin-bottom: 0%;
+  margin-left: -3%;
+  font-family: 'Blinker';
+  padding-inline: 6%;
+  color:aliceblue;
+}
+
+/* Icono de flecha */
+.cabecera svg {
+
+  cursor: pointer;
+}
+
+
+.filtradoTxt {
+  font-family: 'Blinker';
+  padding-inline: 4%;
+  background: #0C0E44;
+  width: 90%;
+  height: 20%;
+  margin-bottom: 10%;;
+  margin-right: 5%;
+  border-radius: 10px;
+  margin-left: 5%;
+}
+
+.filtradoSelectGrid {
+  flex-grow: 1;
+  background: #0C0E44;
+  margin-left: 0%;
+}
+
+/* Contenedor de Pendientes */
+.contenedorPendientes {
+  margin-top: 10%;
+  margin-right: 5%;
+  margin-left: 5%;
+  background: #0C0E44;
+  font-family: 'Blinker';
+  padding-inline: 6%;
+  color:aliceblue;
+  width: 90%;
+  border-radius: 10px;
+}
+
+/* Contenido de Pendientes */
+.contenidoPendientes {
+  background: #0C0E44;
+  margin: 0%;
+  /* Estilos para el contenido de las citas pendientes */
+}
+
+/* Ocultar Contenido */
+.ocultarContenido {
+  background: #0C0E44;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  
+}
+
+/* Texto Predeterminado */
+.defaultTexto {
+  /* Estilos para el texto predeterminado */
+}
+
+/* Ocultar Texto */
+.ocultarTexto {
+  background: #0C0E44;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el botón del DatePicker */
+.DatePickerStyle {
+  /* Estilos para personalizar el aspecto del botón del DatePicker */
+}
+main{
+  margin: 0%;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-bg-color);
+  height: 100vh; /* 100% de la altura de la ventana */
+  color:aliceblue;
+  font-family: 'Blinker';
+}
+
+  .swal-popup{
+    width: 80%;
+    background: rgb(238, 238, 238);
+}
+
+.swal-title{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.swal-html{
+    font-family: 'Blinker';
+    color:black;
+    font-weight: 700;
+    font-size: 120%;
+}
+
+.swal-actions{
+    justify-content: space-around;
+    width: 100%;
+}
+
+.swal-Si, .swal-No{
+    border: 0;
+    color: aliceblue;
+    border-radius: 100%;
+    width: 15vw;
+    height: 15vw;
+}
+.swal-No{
+    background: rgb(178, 13, 13);
+    font-size: 150%;
+}
+
+.swal-Si{
+    background: rgb(15, 15, 192);
+    font-size: 150%;
+}

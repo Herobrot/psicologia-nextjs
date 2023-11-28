@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { saveAuthData, getAuthData, clearAuthData } from "../../../Token";
+import { saveAuthData, getAuthData, clearAuthData,IniciarSesion } from "../../../Token";
 import "./Login.css";
 
 export default function Login() {
@@ -32,6 +32,7 @@ export default function Login() {
             });
             return;
         }
+        IniciarSesion(credentials.password,credentials.correo)
 
         fetch('https://apibuena.onrender.com/paciente/login', {
             method: 'POST',

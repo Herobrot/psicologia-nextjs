@@ -135,8 +135,9 @@ export default function Navbar(){
                         }} >Ver perfil</a>
                         </li>
                         <li>                        
-                            <a href={"/Registro"} className="menu" onClick={() => {
+                            <a href={"/"} className="menu" onClick={() => {
                                 if(!menu){
+                                    clearAuthData()
                                     setMenu(!menu)
                                 }
                         }} >Cerrar sesión</a>

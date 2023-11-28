@@ -1,3 +1,5 @@
+"use client"
+
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,7 +22,7 @@ export default function Home(){
                         <p>
                             Servicios de psicologia y pedagogia para pacientes, agenta tu cita a como mejor se adapte a sus necesidades, desde casa, sin salir.
                         </p>
-                        <div className="agendar">
+                        <div className="agendar" onClick={() => window.location="/Registro"}>
                             <h3>Agendar una cita</h3>
                             <FontAwesomeIcon icon={faCalendarPlus} />
                         </div>
@@ -35,11 +37,11 @@ export default function Home(){
                 <div className="comoAgendar">
                     <h2>Como agendar una cita:</h2><br />
                     <ol>
-                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li><br />
-                        <li>Dolor voluptas sint nam delectus officia consectetur!</li><br />
-                        <li>Perferendis iusto possimus veniam, laudantium repellendus quas sed</li><br />
-                        <li>commodi, eos delectus enim asperiores quasi maxime!</li><br />
-                        <li>Morbi volutpat, arcu vel gravida pharetra, turpis lacus.</li><br />
+                        <li>1. Seleccione el boton de menú en la parte superior.</li><br />
+                        <li>2. Seleccione la opcion "Registrarse" para continuar.</li><br />
+                        <li>3. Ingrese los datos que se le piden, no deje nada vacío.</li><br />
+                        <li>4. ¡Listo! Ya tiene una cuenta con la que agendar una cita.</li><br />
+                        <li>5. Puede agendar una cita cuando usted quiera con una cuenta.</li><br />
                     </ol>
                 </div>            
             </main>

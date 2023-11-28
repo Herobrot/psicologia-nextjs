@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import DatePicker, { registerLocale } from "react-datepicker"
 import { es } from "date-fns/locale";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { forwardRef } from "react";
 import "../Historial/Historial.css"
@@ -25,13 +25,24 @@ export default function AdminHistorial(){
         {value}
       </button>
     ));
-
+    useEffect(() => {
+ 
+        fetch('https://apibuena.onrender.com/cita') 
+            .then(response => response.json())
+            .then(data => {
+                const citasFiltradas = data.filter(cita => cita.EstatusCita === "Confirmada");
+                setContenidoHistorial(citasFiltradas);
+            })
+            .catch(error => {
+                console.error('Error al obtener el historial de citas:', error);
+            });
+    }, []);
     return(
         <main>
             <div className="cabecera">
-                <Link href="/Administrador">
+                <a href="/Administrador">
                     <FontAwesomeIcon icon={faChevronLeft} />
-                </Link>
+                </a>
                 <h2>Historial.</h2>
             </div>
             <div className="filtradoMes">
@@ -79,8 +90,8 @@ export default function AdminHistorial(){
             </div>
             <div className="contenedorHistorial">
                 <div className={contenidoHistorial ? "contenidoHistorial" : "ocultarContenido"}>
-                    {/*Implementar aquí <Citas />*/}
-                    <p className={contenidoHistorial ? "ocultarTexto" : "defaultTexto"}>Historial vacío.</p>
+                <Citas citas={contenidoHistorial}></Citas>
+                    <p className={contenidoHistorial == 0  ? "defaultTexto " : "ocultarTexto"}>Historial vacío.</p>
                 </div>
             </div>
         </main>
