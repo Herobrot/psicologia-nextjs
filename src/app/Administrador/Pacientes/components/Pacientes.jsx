@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./Pacientes.css"
 
 export default function Pacientes({pacientes}){
     return(

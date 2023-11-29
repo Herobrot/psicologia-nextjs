@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Pacientes from "./components/Pacientes";
 import { useEffect, useState } from "react";
+import "./Pacientes.css";
 
 export default function AdminPacientes() {
     const [listaPacientes, setListaPacientes] = useState([]);
@@ -40,13 +41,13 @@ export default function AdminPacientes() {
     return (
         <>
             <main>
-                <div className="cabecera">
+                <div className="cabeceraPacientes">
                     <a href="/Administrador">
                         <FontAwesomeIcon icon={faChevronLeft} />
                     </a>
                     <h2>Pacientes.</h2>
                 </div>
-                <div className="buscador">
+                <div className="buscadorPacientes">
                     <input
                         type="text"
                         name="Buscador"
@@ -58,7 +59,7 @@ export default function AdminPacientes() {
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </label>
                 </div>
-                <div className="contenedorPacientes">
+                <div className={pacientesFiltrados.length > 0 ? "contenedorPacientes" : "ocultarContenido"}>
                     {pacientesFiltrados.length > 0 ? (
                         <div className="contenidoPacientes">
                             <Pacientes pacientes={pacientesFiltrados} />
