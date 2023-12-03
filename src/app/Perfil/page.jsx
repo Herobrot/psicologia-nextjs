@@ -3,9 +3,11 @@
 import "./Perfil.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket, faCircleUser, faCalendarPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots } from "@fortawesome/free-regular-svg-icons";
 import { useEffect, useState } from "react";
 import Citas from "./components/Citas";
 import { saveAuthData, getAuthData, clearAuthData } from "../../../Token"
+import Link from "next/link";
 export default function Perfil() {
 
     const authData = getAuthData();
@@ -20,7 +22,6 @@ export default function Perfil() {
     });
     const [contenidoCitas, setContenidoCitas] = useState([]);
     const [notaMasReciente, setNotaMasReciente] = useState('');
-    const hayContenidoNotas = false;
     useEffect(() => {
 
         fetch('https://apibuena.onrender.com/paciente/' + authData.userId, {
@@ -86,7 +87,12 @@ export default function Perfil() {
     return (
         <>
             <main>
-                <h1>¡Hola!, {usuario.nombre}</h1>
+                <div className="cabeceraPerfil">
+                    <h1>¡Hola!, {usuario.nombre}</h1>
+                    <Link href="/Perfil/Chat">
+                        <FontAwesomeIcon icon={faCommentDots} />    
+                    </Link>
+                </div>
                 <div className="proximasCitas">
                     <p>Proximas citas:</p>
                     <div className="contenedorProCit">

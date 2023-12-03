@@ -6,8 +6,21 @@ main{
     color:aliceblue;
 }
 
-main > h1{
+main > div.cabeceraPerfil{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-bottom: 5%;
+}
+
+main > div.cabeceraPerfil > h1{
+    font-size: 2.5em;
+}
+
+main > div.cabeceraPerfil > a > svg{
+    color:var(--secondary-a-bg-color);
+    border-radius: 100%;
+    padding: 2.15% 4.8%;
 }
 
 main > div{
