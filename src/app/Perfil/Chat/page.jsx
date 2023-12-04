@@ -10,16 +10,18 @@ export default function Chat() {
     const [inputMessage, setInputMessage] = useState('');
 
     useEffect(() => {
-        const newSocket = new WebSocket('ws://localhost:8080');
+        const newSocket = new WebSocket('wss://api-vvmz.onrender.com');
+    
+        newSocket.onopen = () => console.log("Conexión WebSocket abierta");
+        newSocket.onmessage = (event) => setMessages(prev => [...prev, event.data]);
+        newSocket.onerror = (event) => console.error("Error en WebSocket", event);
+        newSocket.onclose = (event) => console.log("Conexión WebSocket cerrada", event);
+    
         setSocket(newSocket);
-
-        newSocket.onmessage = (event) => {
-            setMessages(prev => [...prev, event.data]);
-        };
-
+    
         return () => newSocket.close();
     }, []);
-
+    
     const sendMessage = () => {
         if (socket && inputMessage) {
             socket.send(inputMessage);
