@@ -1,169 +1,152 @@
-main{
-    background: var(--primary-bg-color);
-    font-family: 'Blinker';
-    padding-inline: 6%;
-    height: 100vh;
-    color:aliceblue;
+/* Estilos para el componente AdminPendientes */
+
+/* Cabecera */
+main {
+  background: var(--primary-bg-color);
+  font-family: 'Blinker';
+  padding-inline: 6vw; /* Cambiado a vw */
+  padding-top: 10vh; /* Cambiado a vh */
+  height: 100vh;
+  color: aliceblue;
 }
 
-main > h1{
-    padding-bottom: 5%;
+main > div {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  flex-direction: column; /* Añadido para alinear verticalmente */
 }
 
-main > div{
-    margin-block: 5%;
+main > div.cabecera {
+  justify-content: space-between;
+  margin-bottom: 5vh; /* Cambiado a vh */
+  width: 100%; /* Añadido para ancho completo */
 }
 
-main > div > .contenedorProCit{
-    padding: 1.5%;
-    overflow-y: scroll;
+main > div.cabecera > h2 {
+  font-size: 2.5vw; /* Cambiado a vw */
 }
 
-main > div > p{
-    font-size: 120%;
+main > div.cabecera > a {
+  color: var(--primary-bg-color);
+  border-radius: 100%;
+  padding: 2.15vh 4.8vw; /* Cambiado a vh y vw */
+  font-size: 1.8vw; /* Cambiado a vw */
+  background: var(--primaryAdmin-a-bg-color);
 }
 
-main > div > div{
-    margin-top: 4%;
-    border-radius: 10px;
-    height: 40vw;
-    width: 100%;
-    background-color: var(--primary-user-bg-color);
+main > div.ordenarPendientes {
+  background: var(--secundaryAdmin-bg-color);
+  justify-content: space-around;
+  padding-block: 2vh; /* Cambiado a vh */
+  width: 100%;
+  font-size: 1vw; /* Cambiado a vw */
 }
 
-main > div > div > .contenidoCitas{
-    display: grid;
-    row-gap: 5px;
+.ordenarSelectGrid select {
+  font-weight: 600;
+  outline: none;
+  padding: 0 5vw 0 15vw; /* Cambiado a vw */
+  border: 0;
+  font-size: 1vw; /* Cambiado a vw */
+  border-radius: 5px;
 }
 
-main > div > div > div{
-    position: relative;
+/* Estilos para el calendario */
+.calendar-container {
+  width: 80vw; /* Ajustado al ancho de la ventana */
+  margin: auto;
+  border: 1px solid #ccc;
+  padding: 2vh; /* Cambiado a vh */
+  border-radius: 8px;
 }
 
-main > div > div > div > .defaultTexto{
-    text-align: center;
-    padding-top: 17%;
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2vh; /* Cambiado a vh */
 }
 
-main > div > div > div > .ocultarTexto{
-    display: none;
+.calendar-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-main > div.botonesNav{
-    margin-top: 15%;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: space-between;
+.date-picker {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  color: #333333;
+  max-width: 80vw; /* Ajustado al ancho de la ventana */
+  margin: 0 auto;
+  padding: 1vh; /* Cambiado a vh */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-main > div.botonesNav > button{
-    border: 0;
-    width: fit-content;
-    height: auto;
-    border-radius: 100%;
-    padding: 3%;
-    background-color: var(--primary-user-bg-color);
+.date-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1vh; /* Cambiado a vh */
 }
 
-main > div.botonesNav > button > svg{
-    height: auto;
-    width: 12vw;
-    color: var(--primary-user-button-color);
-}.calendar-container {
-    width: 300px;
-    margin: auto;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .calendar-header button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .date-picker {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    border-radius: 8px;
-    font-family: 'Arial', sans-serif;
-    color: #333333;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .date-picker-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  
-  .date-picker-header button {
-    background: none;
-    border: 1px solid #cccccc;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .date-picker-month {
-    font-weight: bold;
-  }
-  
-  .date-picker-body {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-   
-  }
-  
-  .time-selector {
-    display: flex;
-    justify-content: space-between;
-    margin: 16px 0;
-  }
-  
-  .time-selector select {
-    border: 1px solid #cccccc;
-    padding: 5px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .date-confirm {
-    text-align: center;
-    padding: 8px;
-    background-color: #f0f0f0;
-    border-radius: 4px;
-    margin-bottom: 16px;
-  }
-  
-  .action-buttons {
-    display: flex;
-    justify-content: space-around;
-    /* Más estilos aquí para los botones de acción */
-  }
-  
-  
-  .calendar-footer {
-    margin-top: 20px;
-    text-align: center;
-  }.cancel-button,
-  .confirm-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 24px;}
+.date-picker-header button {
+  background: none;
+  border: 1px solid #cccccc;
+  padding: 1vh 2vw; /* Cambiado a vh y vw */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.date-picker-month {
+  font-weight: bold;
+}
+
+.date-picker-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.time-selector {
+  display: flex;
+  justify-content: space-between;
+  margin: 2vh 0; /* Cambiado a vh */
+}
+
+.time-selector select {
+  border: 1px solid #cccccc;
+  padding: 1vh; /* Cambiado a vh */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.date-confirm {
+  text-align: center;
+  padding: 1vh; /* Cambiado a vh */
+ 
+  border-radius: 0px;
+  margin-bottom: 2vh; /* Cambiado a vh */
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar-footer {
+  margin-top: 2vh; /* Cambiado a vh */
+  text-align: center;
+}
+
+.cancel-button, .confirm-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 10vw; /* Cambiado a vw */
+}
