@@ -154,6 +154,7 @@ export default function Cita() {
 
 
     return (
+        <main>
         <div className="date-picker-container">
             <h1>¿Cuándo quiere su cita?</h1>
             <p>Seleccione el día de su cita.</p>
@@ -205,5 +206,6 @@ export default function Cita() {
                 </button>
             </div>
         </div>
+        </main>
     );
 }
