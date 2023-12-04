@@ -20,11 +20,6 @@ main > div.cabeceraChat{
     padding-bottom: 5%;
 }
 
-main > div.cabeceraChat > h2{
-    font-size: 2.5em;
-    color: aliceblue;
-    margin-left: 5%;
-}
 
 main > div.cabeceraChat > a{
     color:black;
@@ -34,8 +29,14 @@ main > div.cabeceraChat > a{
     margin-left: 5%;
 }
 
+main > div.cabeceraChat > h2{
+    font-size: 2.5em;
+    color: aliceblue;
+    margin-left: 8%;
+}
+
 div.cabeceraChat > a > svg{
-    width: 6vw;
+    font-size: 2em;
 }
 
 main > div.contenedorChat{
