@@ -37,15 +37,16 @@ main > div > input{
     margin-block: 4%;
     border-radius: 20px;
     background-color: aliceblue;
-    color: gray;
-    font-size: 130%;
+    color: black;
+    padding-left: 3%;
+    font-size: 120%;
     width: 80%;
     height: 12vw;
     font-weight: 200;
 }
 
 main > div > input::placeholder{
-    padding-left: 3%;
+    color: gray;
 }
 
 main > div > p{
@@ -74,7 +75,7 @@ main > div > #btn-IS{
     background-color:#da9800;
     color: white;
     font-size: 130%;
-
+    padding-inline: 5%;
     height: 12vw;
    
 }

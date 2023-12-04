@@ -2,6 +2,7 @@ main{
     background: var(--primary-bg-color);
     font-family: 'Blinker';
     padding-inline: 6%;
+    padding-block: 1%;
     height: 100vh;
     color:aliceblue;
 }
@@ -17,10 +18,15 @@ main > div.cabeceraPerfil > h1{
     font-size: 2.5em;
 }
 
+main > div.cabeceraPerfil > a{
+    background:var(--secondary-user-bg-color);
+    border-radius: 100%;
+    padding: 2.15% 2.8%;
+}
+
 main > div.cabeceraPerfil > a > svg{
     color:var(--secondary-a-bg-color);
-    border-radius: 100%;
-    padding: 2.15% 4.8%;
+    font-size: 2.5em;
 }
 
 main > div{
@@ -39,7 +45,7 @@ main > div > p{
 main > div > div{
     margin-top: 4%;
     border-radius: 10px;
-    height: 40vw;
+    height: 25vh;
     width: 100%;
     background-color: var(--primary-user-bg-color);
 }
@@ -55,7 +61,7 @@ main > div > div > div{
 
 main > div > div > div > .defaultTexto{
     text-align: center;
-    padding-top: 17%;
+    padding-top: 10vh;
 }
 
 main > div > div > div > .ocultarTexto{
@@ -63,7 +69,7 @@ main > div > div > div > .ocultarTexto{
 }
 
 main > div.botonesNav{
-    margin-top: 15%;
+    margin-top: 10vh;
     margin-bottom: 0;
     display: flex;
     justify-content: space-between;

@@ -48,6 +48,13 @@ main > div.contenedorChat{
     height: 70svh;
 }
 
+div.contenedorChat > div{
+    color: aliceblue;
+    background: var(--primary-user-bg-color);
+    width: 90%;
+    margin-block: 2%;
+}
+
 main > div.pieChat{
     position: absolute;
     bottom: 0;

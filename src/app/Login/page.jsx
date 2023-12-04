@@ -81,7 +81,7 @@ export default function Login() {
                 <h1>Iniciar sesión</h1>
                 <p>Para continuar, debes iniciar sesión o crear una cuenta.</p>
                 <div>
-                <input type="text" name="usernameOrPhone" onChange={handleInputChange} placeholder="Teléfono/Correo" />
+                    <input type="text" name="usernameOrPhone" onChange={handleInputChange} placeholder="Teléfono/Correo" />
                     <input type="password" name="password" onChange={handleInputChange} placeholder="Contraseña" />
                     <br />
                     <button onClick={login} id="btn-IS">Iniciar sesión</button>
