@@ -89,9 +89,9 @@ export default function Perfil() {
             <main>
                 <div className="cabeceraPerfil">
                     <h1>¡Hola!, {usuario.nombre}</h1>
-                    <Link href="/Perfil/Chat">
+                    <a href="/Perfil/Chat">
                         <FontAwesomeIcon icon={faCommentDots} />    
-                    </Link>
+                    </a>
                 </div>
                 <div className="proximasCitas">
                     <p>Proximas citas:</p>

@@ -1,22 +1,62 @@
-main{
-    background: rgb(13,15,68);
-    background: linear-gradient(rgba(13,15,68,1) 0%, rgba(25,29,136,1) 30%, rgba(25,29,136,1) 70%, rgba(13,15,68,1) 100%);
+:root{
+    --primaryChat-bg-color: rgb(25,29,136);
+    --secondaryChat-bg-color: rgb(13,15,68);
 }
-.contenedorChat {
-    font-size: 1rem; 
+
+main{
+    position: relative;
+    background: var(--primaryChat-bg-color);
+    background: linear-gradient(var(--secondaryChat-bg-color) 0%, var(--primaryChat-bg-color) 30%, var(--primaryChat-bg-color) 70%, var(--secondaryChat-bg-color) 100%);
+    font-family: 'Blinker';
+    padding-block: 2%;
+    height: 100vh;
+}
+
+main > div.cabeceraChat{
+    background: var(--secondaryChat-bg-color);
+    background: linear-gradient(var(--secondaryChat-bg-color) 75%, transparent 100%);
+    display: flex;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+
+main > div.cabeceraChat > a{
+    color:black;
+    border-radius: 100%;
+    padding: 2.7% 5.1%;
+    background: var(--primaryAdmin-a-bg-color);
+    margin-left: 5%;
+}
+
+main > div.cabeceraChat > h2{
+    font-size: 2.5em;
+    color: aliceblue;
+    margin-left: 8%;
+}
+
+div.cabeceraChat > a > svg{
+    font-size: 2em;
+}
+
+main > div.contenedorChat{
+    background: var(--primaryChat-bg-color);
+    background: linear-gradient(transparent 10%, var(--primaryChat-bg-color) 90%, transparent 100%);
     display: flex;
     flex-direction: column;
-    overflow-y: auto; 
-   
-    padding: 10px;
-    border: 1px solid #ccc; 
-    margin: 10px;
-    border-radius: 10px;
+    overflow-y: scroll;
+    height: 70svh;
 }
-.message {
-    height: auto;
-    margin-bottom: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    word-break: break-word; 
+
+main > div.pieChat{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15vh;
+    background: var(--secondaryChat-bg-color);
+    background: linear-gradient(to top, var(--secondaryChat-bg-color) 70%, transparent 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2%;
 }

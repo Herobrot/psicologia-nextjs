@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import "./Chat.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import Link from 'next/link';
 
 export default function Chat() {
     const [socket, setSocket] = useState(null);
@@ -39,8 +40,10 @@ export default function Chat() {
         <>
             <main>
                 <div className="cabeceraChat">
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                    <h2>Chat</h2>
+                    <Link href="/Perfil">
+                        <FontAwesomeIcon icon={faChevronLeft} />
+                    </Link>
+                    <h2>Chat.</h2>
                 </div>
 
                 <div className="contenedorChat">
@@ -49,7 +52,7 @@ export default function Chat() {
                     ))}
                 </div>
 
-                <div className="botonEnviar">
+                <div className="pieChat">
                     <input 
                         type="text" 
                         value={inputMessage}
