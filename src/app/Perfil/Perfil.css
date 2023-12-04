@@ -69,7 +69,7 @@ main > div > div > div > .ocultarTexto{
 }
 
 main > div.botonesNav{
-    margin-top: 10vh;
+    margin-top: 7vh;
     margin-bottom: 0;
     display: flex;
     justify-content: space-between;
