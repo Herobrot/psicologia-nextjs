@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import "./Chat.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Link from 'next/link';
+import { useRef } from 'react';
 
 export default function Chat() {
     const [socket, setSocket] = useState(null);
@@ -28,12 +30,17 @@ export default function Chat() {
     
         return () => newSocket.close();
     }, []);
-    
+
     const sendMessage = () => {
         if (socket && inputMessage) {
             socket.send(inputMessage);
             setInputMessage('');
         }
+        const scroll = document.getElementById('scroll');
+
+        const scrollTimeout = setTimeout(function() {
+            scroll.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }, 200);
     };
 
     return (
@@ -50,19 +57,21 @@ export default function Chat() {
                     {messages.map((message, index) => (
                         <div className='message' key={index}>{message}</div>
                     ))}
+                    <span id="scroll" />
                 </div>
 
                 <div className="pieChat">
-                    <input 
-                        type="text" 
-                        value={inputMessage}
-                        onChange={(e) => setInputMessage(e.target.value)}
-                        onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-                    />
-                    <FontAwesomeIcon 
-                        icon={faPaperPlane} 
-                        onClick={sendMessage} 
-                    />
+                    <div className="contenedorInput">
+                        <input 
+                            type="text" 
+                            value={inputMessage}
+                            onChange={(e) => setInputMessage(e.target.value)}
+                            onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+                        />
+                        <span>
+                            <FontAwesomeIcon icon={faPaperPlane} onClick={sendMessage} />
+                        </span>
+                    </div>
                 </div>
             </main>
         </>

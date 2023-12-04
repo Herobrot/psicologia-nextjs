@@ -57,8 +57,16 @@ export default function Login() {
                     icon: 'success',
                     title: 'Éxito',
                     text: 'Inicio de sesión exitoso.',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = "/Perfil";
+                    }
+
+                    if(result.isDismissed){
+                        window.location = "/Perfil";
+                    }
                 });
-                window.location = "/Perfil"
+                
             }
         })
         .catch(error => {

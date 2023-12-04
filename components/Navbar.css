@@ -64,6 +64,7 @@ nav > ul.nav-lista{
 }
 
 nav > ul.nav-lista > li{
+    margin: 3vh 0;
     opacity: 0;
     padding-block: 5%;
     line-height: 16px;
@@ -99,6 +100,7 @@ ul.menu-open{
 }
 
 ul.menu-open > li{
+    margin: 3vh 0;
     opacity: 1;
     padding-block: 5%;
     line-height: 16px;
@@ -106,8 +108,13 @@ ul.menu-open > li{
     color:aliceblue;
 }
 
+li > p.user{
+    line-height: 35px;
+    font-size: 2em;
+}
+
 nav > ul > li > img{
-    padding-top: 15%;
+    padding-top: 3%;
     height: auto;
     width: 30%;
 }
