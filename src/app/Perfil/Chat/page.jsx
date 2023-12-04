@@ -13,7 +13,13 @@ export default function Chat() {
         const newSocket = new WebSocket('wss://api-vvmz.onrender.com');
     
         newSocket.onopen = () => console.log("Conexión WebSocket abierta");
-        newSocket.onmessage = (event) => setMessages(prev => [...prev, event.data]);
+        newSocket.onmessage = (event) => {
+            if (typeof event.data === 'string') {
+                const newMessages = event.data.split(/[\n]+/).filter(msg => msg.trim() !== '');
+                setMessages(prev => [...prev, ...newMessages]);
+            }
+        };
+        
         newSocket.onerror = (event) => console.error("Error en WebSocket", event);
         newSocket.onclose = (event) => console.log("Conexión WebSocket cerrada", event);
     
@@ -39,7 +45,7 @@ export default function Chat() {
 
                 <div className="contenedorChat">
                     {messages.map((message, index) => (
-                        <div key={index}>{message}</div>
+                        <div className='message' key={index}>{message}</div>
                     ))}
                 </div>
 
