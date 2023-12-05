@@ -9,12 +9,12 @@
 
 main{
     font-family: 'Blinker';
+    background: aliceblue;
 }
 
 main > div.fondo{
     background: url("/Fondo_Imagen.png");
     position: relative;
-    
 }
 
 main > div.fondo > div.presentacion{    

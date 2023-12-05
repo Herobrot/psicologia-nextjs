@@ -108,6 +108,14 @@ ul.menu-open > li{
     color:aliceblue;
 }
 
+ul.nav-lista > li#chatbot{
+    transition: all 1s;
+}
+
+ul.menu-open > li#chatbot{
+    transition: all 1s;
+}
+
 li > p.user{
     line-height: 35px;
     font-size: 2em;
@@ -130,4 +138,22 @@ ul > li > a{
     border-radius: 20px;
     font-size: 110%;
     text-transform: uppercase;
+}
+
+ul.nav-lista > li#chatbot > a#chatbotBtn{
+    display: none;
+}
+
+ul.menu-open > li#chatbot > a#chatbotBtn{
+    z-index: 1000;
+    padding: 3%;
+    border-radius: 100%;
+    font-size: 2.2em;
+    color: var(--primary-bg-color);
+    position: fixed;
+    top: 90%;
+    right: 2%;
+    transition: all 1.5s 0.5s;
+    height: auto;
+    width: auto;
 }
