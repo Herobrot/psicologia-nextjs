@@ -26,7 +26,7 @@ export default function Navbar() {
   
     useEffect(() => {
       if (authData.userId) {
-        fetch(`https://apibuena.onrender.com/paciente/${authData.userId}`, {
+        fetch(process.env.APIURL+`paciente/${authData.userId}`, {
           headers: {
             Authorization: `${authData.token}`,
             "Content-Type": "application/json"

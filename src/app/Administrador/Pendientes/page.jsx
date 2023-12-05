@@ -104,7 +104,7 @@ export default function AdminPendientes(){
     }
 
     useEffect(() => {
-        fetch('https://apibuena.onrender.com/cita/') 
+        fetch(process.env.APIURL+'cita/') 
             .then(response => response.json())
             .then(data => {
                console.log(data)

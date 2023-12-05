@@ -27,7 +27,7 @@ export default function AdminHistorial(){
     ));
     useEffect(() => {
  
-        fetch('https://apibuena.onrender.com/cita') 
+        fetch(process.env.APIURL+'cita') 
             .then(response => response.json())
             .then(data => {
                 const citasFiltradas = data.filter(cita => cita.EstatusCita === "Confirmada");

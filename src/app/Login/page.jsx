@@ -34,7 +34,7 @@ export default function Login() {
         }
         IniciarSesion(credentials.password,credentials.correo)
 
-        fetch('https://apibuena.onrender.com/paciente/login', {
+        fetch(process.env.APIURL+'paciente/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

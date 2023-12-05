@@ -20,7 +20,7 @@ export default function Registro(){
     const [datosOriginales, setDatosOriginales] = useState({});
     useEffect(() => {
 
-        fetch('https://apibuena.onrender.com/paciente/' + authData.userId, {
+        fetch(process.env.APIURL+'paciente/' + authData.userId, {
             headers: {
                 'Authorization': `${authData.token}`,
                 'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ export default function Registro(){
     };
     const actualizarDatos = async () => {
         try {
-            const response = await fetch('https://apibuena.onrender.com/paciente/' + authData.userId, {
+            const response = await fetch(process.env.APIURL+'paciente/' + authData.userId, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `${authData.token}`,
@@ -219,7 +219,7 @@ export default function Registro(){
                             correo: correo,
                             password: pass
                         }                            
-                        const response = await fetch("https://apibuena.onrender.com/paciente", {
+                        const response = await fetch(process.env.APIURL+"paciente", {
                         method: "post",
                         headers: {
                             'Content-Type': 'application/json',

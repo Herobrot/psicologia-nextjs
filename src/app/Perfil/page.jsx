@@ -24,7 +24,7 @@ export default function Perfil() {
     const [notaMasReciente, setNotaMasReciente] = useState('');
     useEffect(() => {
 
-        fetch('https://apibuena.onrender.com/paciente/' + authData.userId, {
+        fetch(process.env.APIURL+'paciente/' + authData.userId, {
             headers: {
                 'Authorization': `${authData.token}`,
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ export default function Perfil() {
                     estado: data.estado,
                     password: data.password
                 });
-                fetch('https://apibuena.onrender.com/cita/all/' + authData.userId, {
+                fetch(process.env.APIURL+'cita/all/' + authData.userId, {
                     headers: {
                         'Content-Type': 'application/json'
                     },

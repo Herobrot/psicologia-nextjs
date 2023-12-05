@@ -22,7 +22,7 @@ export default function AdminPacientes() {
     });
 
     useEffect(() => {
-        fetch('https://apibuena.onrender.com/paciente')
+        fetch(process.env.APIURL+'paciente')
             .then(response => {
                 if (response.ok) {
                     return response.json();

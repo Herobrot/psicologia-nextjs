@@ -148,7 +148,7 @@ export default function Registro(){
                             correo: correo,
                             password: pass
                         }                            
-                        const response = await fetch("https://apibuena.onrender.com/paciente", {
+                        const response = await fetch(process.env.APIURL+"paciente", {
                         method: "post",
                         headers: {
                             'Content-Type': 'application/json',

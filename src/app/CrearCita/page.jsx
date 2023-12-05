@@ -41,7 +41,7 @@ export default function Cita() {
     }, [selectedTime]);
     useEffect(() => {
 
-        fetch('https://apibuena.onrender.com/paciente/' + authData.userId, {
+        fetch(process.env.APIURL+'paciente/' + authData.userId, {
             headers: {
                 'Authorization': `${authData.token}`,
                 'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ export default function Cita() {
             cancelButtonText: 'Salir'
         }).then((result)=>{
             if(result.value){
-                fetch('https://apibuena.onrender.com/paciente/agregarCita', {
+                fetch(process.env.APIURL+'paciente/agregarCita', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

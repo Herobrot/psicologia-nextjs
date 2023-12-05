@@ -39,7 +39,7 @@ export default function Citas({citas, usuario}){
         });
     };
     const ActualizarCita = (cita, datos) => {
-        fetch(`https://apibuena.onrender.com/cita/${cita._id}`, {
+        fetch(process.env.APIURL+`cita/${cita._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ export default function Citas({citas, usuario}){
             }
         }).then((result) => {
             if(result.isDenied){
-                fetch(`https://apibuena.onrender.com/cita/${cita._id}`, {
+                fetch(process.env.APIURL+`cita/${cita._id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
