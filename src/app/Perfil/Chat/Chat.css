@@ -6,8 +6,8 @@
 
 main{
     position: relative;
-    background: var(--primaryChat-bg-color);
-    background: linear-gradient(var(--secondaryChat-bg-color) 0%, var(--primaryChat-bg-color) 30%, var(--primaryChat-bg-color) 70%, var(--secondaryChat-bg-color) 100%);
+    background: var(--tertearyChat-bg-color);
+    background: linear-gradient(var(--tertearyChat-bg-color) 0%, var(--primaryChat-bg-color) 30%, var(--primaryChat-bg-color) 70%, var(--teChat-bg-color) 100%);
     font-family: 'Blinker';
     padding-block: 2%;
     height: 100vh;

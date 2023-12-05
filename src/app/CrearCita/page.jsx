@@ -41,7 +41,7 @@ export default function Cita() {
     }, [selectedTime]);
     useEffect(() => {
 
-        fetch(process.env.APIURL+'paciente/' + authData.userId, {
+        fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE+'/' + authData.userId, {
             headers: {
                 'Authorization': `${authData.token}`,
                 'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ export default function Cita() {
             cancelButtonText: 'Salir'
         }).then((result)=>{
             if(result.value){
-                fetch(process.env.APIURL+'paciente/agregarCita', {
+                fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE+'/agregarCita', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

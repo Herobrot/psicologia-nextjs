@@ -27,7 +27,7 @@ export default function Navbar() {
   
     useEffect(() => {
       if (authData.userId) {
-        fetch(process.env.APIURL+`paciente/${authData.userId}`, {
+        fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE+`/${authData.userId}`, {
           headers: {
             Authorization: `${authData.token}`,
             "Content-Type": "application/json"
@@ -117,7 +117,7 @@ export default function Navbar() {
                       <FontAwesomeIcon icon={faCommentDots} />
                     </a> 
                   ) : (
-                    <Link href="/chatbot" id='chatbotBtn'>
+                    <Link href="/chatbot" id='chatbotBtn' onClick={handleMenuClick}>
                       <FontAwesomeIcon icon={faCommentDots} />
                     </Link>
                   )}    
@@ -154,7 +154,7 @@ export default function Navbar() {
                       <FontAwesomeIcon icon={faCommentDots} />
                     </a> 
                   ) : (
-                    <Link href="/chatbot" id='chatbotBtn'>
+                    <Link href="/chatbot" id='chatbotBtn' onClick={handleMenuClick}>
                       <FontAwesomeIcon icon={faCommentDots} />
                     </Link>
                   )}

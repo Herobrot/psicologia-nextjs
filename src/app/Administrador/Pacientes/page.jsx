@@ -22,7 +22,7 @@ export default function AdminPacientes() {
     });
 
     useEffect(() => {
-        fetch(process.env.APIURL+'paciente')
+        fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE)
             .then(response => {
                 if (response.ok) {
                     return response.json();

@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Link from 'next/link';
-import { useRef } from 'react';
 
 export default function Chat() {
     const [socket, setSocket] = useState(null);
@@ -47,7 +46,7 @@ export default function Chat() {
         <>
             <main>
                 <div className="cabeceraChat">
-                    <Link href="/Perfil">
+                    <Link href="/">
                         <FontAwesomeIcon icon={faChevronLeft} />
                     </Link>
                     <h2>Chat.</h2>
