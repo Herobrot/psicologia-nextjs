@@ -4,9 +4,10 @@ import "./Navbar.css"
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { useEffect,useState } from "react";
-import { saveAuthData, getAuthData, clearAuthData } from "../Token"
+import { getAuthData, clearAuthData } from "../Token"
+import Link from "next/link"
 
 config.autoAddCss = false;
 
@@ -110,6 +111,17 @@ export default function Navbar() {
                     Registrarse
                   </a>
                 </li>
+                <li id="chatbot">
+                  {menu ? (
+                    <a id='chatbotBtn'>
+                      <FontAwesomeIcon icon={faCommentDots} />
+                    </a> 
+                  ) : (
+                    <Link href="/chatbot" id='chatbotBtn'>
+                      <FontAwesomeIcon icon={faCommentDots} />
+                    </Link>
+                  )}    
+                </li>
               </>
             ) : (
               <>
@@ -135,6 +147,17 @@ export default function Navbar() {
                   >
                     Cerrar sesión
                   </a>
+                </li>
+                <li id="chatbot">
+                  {menu ? (
+                    <a id='chatbotBtn'>
+                      <FontAwesomeIcon icon={faCommentDots} />
+                    </a> 
+                  ) : (
+                    <Link href="/chatbot" id='chatbotBtn'>
+                      <FontAwesomeIcon icon={faCommentDots} />
+                    </Link>
+                  )}
                 </li>
               </>
             )}
