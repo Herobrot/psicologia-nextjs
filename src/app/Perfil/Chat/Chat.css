@@ -7,15 +7,15 @@
 main{
     position: relative;
     background: var(--tertearyChat-bg-color);
-    background: linear-gradient(var(--tertearyChat-bg-color) 0%, var(--primaryChat-bg-color) 30%, var(--primaryChat-bg-color) 70%, var(--teChat-bg-color) 100%);
+    background: linear-gradient(var(--tertearyChat-bg-color) 0%, var(--primaryChat-bg-color) 25%, var(--primaryChat-bg-color) 70%, var(--tertearyChat-bg-color) 100%);
     font-family: 'Blinker';
     padding-block: 2%;
     height: 100vh;
 }
 
 main > div.cabeceraChat{
-    background: var(--secondaryChat-bg-color);
-    background: linear-gradient(var(--secondaryChat-bg-color) 70%, transparent 100%);
+    background: var(--tertearyChat-bg-color);
+    background: linear-gradient(var(--tertearyChat-bg-color) 70%, transparent 100%);
     display: flex;
     align-items: center;
     padding-bottom: 5%;
@@ -64,8 +64,8 @@ main > div.pieChat{
     bottom: 0;
     width: 100%;
     height: 15vh;
-    background: var(--secondaryChat-bg-color);
-    background: linear-gradient(to top, var(--secondaryChat-bg-color) 70%, transparent 100%);
+    background: var(--tertearyChat-bg-color);
+    background: linear-gradient(to top, var(--tertearyChat-bg-color) 70%, transparent 100%);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Link from 'next/link';
+import Mensajes from './components/Mensajes';
 
 export default function Chat() {
     const [socket, setSocket] = useState(null);
+    const [socketActivado, setSocketBool] = useState(false);
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
 
@@ -31,7 +33,7 @@ export default function Chat() {
         newSocket.onclose = (event) => console.log("Conexión WebSocket cerrada", event);
     
         setSocket(newSocket);
-    
+        setSocketBool(true);
         return () => newSocket.close();
     }, []);
 
@@ -52,7 +54,7 @@ export default function Chat() {
         <>
             <main>
                 <div className="cabeceraChat">
-                    <Link href="/">
+                    <Link href="/Perfil">
                         <FontAwesomeIcon icon={faChevronLeft} />
                     </Link>
                     <h2>Chat.</h2>
@@ -78,6 +80,8 @@ export default function Chat() {
                             value={inputMessage}
                             onChange={(e) => setInputMessage(e.target.value)}
                             onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+                            placeholder="Escribe un número..."
+                            disabled={!socketActivado}
                         />
                         <span>
                             <FontAwesomeIcon icon={faPaperPlane} onClick={sendMessage} />
