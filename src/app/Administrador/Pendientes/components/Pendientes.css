@@ -1,7 +1,6 @@
-div.contenedorCitas{
+div.contenedorCita{
     border-radius: 10px;
     background: #2C276B;
     padding: 2% 3%;
     font-size: 1.3em;
-    color: aliceblue;
 }
