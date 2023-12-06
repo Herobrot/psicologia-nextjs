@@ -1,9 +1,21 @@
-div.message{
+div#message{
     font-size: 4vw;
-    color: aliceblue;
-    background: var(--tertearyChat-bg-color);
     border-radius: 20px;
     padding: 2% 3%;
-    width: 90%;
-    margin: 2% auto;
+    width: 70%;
+    display: flex;
+    margin: 2% 3%;
+    color: aliceblue;
+    transition: all 0.10s ease;
+}
+
+.sent {
+    background-color: var(--tertearyChat-bg-color); 
+    align-self: flex-end;
+
+}
+
+.received {
+    background-color: var(--secondaryChat-bg-color); 
+    align-self: flex-start; 
 }

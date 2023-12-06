@@ -6,17 +6,24 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Link from 'next/link';
 import Mensajes from './components/Mensajes';
+import { Suspense } from 'react';
+import { getAuthData } from '../../../../Token';
 
 export default function Chat() {
+    const authData = getAuthData();
     const [socket, setSocket] = useState(null);
     const [socketActivado, setSocketBool] = useState(false);
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
 
     useEffect(() => {
+
         const newSocket = new WebSocket('ws://localhost:3001');
     
-        newSocket.onopen = () => console.log("Conexión WebSocket abierta");
+        newSocket.onopen = () => {
+            console.log("Conexión WebSocket abierta")
+            const connectionMessage = { type: 'connection', clientId: authData.token };
+            newSocket.send(JSON.stringify(connectionMessage));};
         newSocket.onmessage = (event) => {
          
             if (event.data instanceof Blob) {
@@ -60,18 +67,12 @@ export default function Chat() {
                     <h2>Chat.</h2>
                 </div>
 
-                <div className="contenedorChat ">
-    {messages.map((message, index) => (
-        <div 
-            className={`message ${message.type === 'sent' ? 'sent' : 'received'}`} 
-            key={index}
-        >
-            {message.text}
-        </div>
-    ))}
-    <span id="scroll" />
-</div>
-
+                <div className="contenedorChat">
+                    <Suspense fallback={<div>Cargando...</div>}>
+                        <Mensajes data={messages} />
+                    </Suspense>
+                <span id="scroll" />
+                </div>
 
                 <div className="pieChat">
                     <div className="contenedorInput">
