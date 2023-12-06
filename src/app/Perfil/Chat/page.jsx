@@ -22,19 +22,22 @@ export default function Chat() {
     
         newSocket.onopen = () => {
             console.log("Conexión WebSocket abierta")
-            const connectionMessage = { type: 'connection', clientId: authData.token };
+            const connectionMessage = { type: 'connection', clientId: authData.userId };
             newSocket.send(JSON.stringify(connectionMessage));};
-        newSocket.onmessage = (event) => {
-         
-            if (event.data instanceof Blob) {
-                const reader = new FileReader();
-                reader.onload = function() {
-                    const text = reader.result;
-                    setMessages(prev => [...prev, { text: text, type: 'received' }]);
-                };
-                reader.readAsText(event.data);
-            }
-        };
+            newSocket.onmessage = (event) => {
+                try {
+                  
+                    const data = JSON.parse(event.data);
+                    console.log('Mensaje parseado como JSON:', data);
+            
+                    setMessages(prev => [...prev, { text: data.text, type: 'received' }]);
+                } catch (error) {
+                   
+                    console.log('Mensaje como texto plano:', event.data);
+                    setMessages(prev => [...prev, { text: event.data, type: 'received' }]);
+                }
+            };
+            
         
         newSocket.onerror = (event) => console.error("Error en WebSocket", event);
         newSocket.onclose = (event) => console.log("Conexión WebSocket cerrada", event);
@@ -46,7 +49,13 @@ export default function Chat() {
 
     const sendMessage = () => {
         if (socket && inputMessage) {
-            socket.send(inputMessage);
+            const messageToSend = {
+                type: 'message',
+                text: inputMessage,
+                clientId: authData.token 
+            };
+    
+            socket.send(JSON.stringify(messageToSend));
             setMessages(prev => [...prev, { text: inputMessage, type: 'sent' }]);
             setInputMessage('');
         }
