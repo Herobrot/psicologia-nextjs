@@ -4,8 +4,10 @@ import "./Chatbot.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import Mensajes from './components/Mensajes';
 
 export default function Chatbot() {
+    const [socketActivado, setSocketBool] = useState(false);
     const [socket, setSocket] = useState(null);
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
@@ -25,6 +27,7 @@ export default function Chatbot() {
         newSocket.onclose = (event) => console.log("Conexión WebSocket cerrada", event);
     
         setSocket(newSocket);
+        setSocketBool(true);
     
         return () => newSocket.close();
     }, []);
@@ -52,9 +55,7 @@ export default function Chatbot() {
                 </div>
 
                 <div className="contenedorChat">
-                    {messages.map((message, index) => (
-                        <div className='message' key={index}>{message}</div>
-                    ))}
+                    <Mensajes data={messages} />
                     <span id="scroll" />
                 </div>
 
@@ -65,6 +66,8 @@ export default function Chatbot() {
                             value={inputMessage}
                             onChange={(e) => setInputMessage(e.target.value)}
                             onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+                            placeholder="Escribe un número..."
+                            disabled={!socketActivado}
                         />
                         <span>
                             <FontAwesomeIcon icon={faPaperPlane} onClick={sendMessage} />

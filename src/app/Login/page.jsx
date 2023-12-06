@@ -35,7 +35,7 @@ export default function Login() {
         }
         IniciarSesion(credentials.password,credentials.correo)
 
-        fetch(apiPaciente+'/login', {
+        fetch(process.env.NEXT_PUBLIC_APIURL+'/paciente/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

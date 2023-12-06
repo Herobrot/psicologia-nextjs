@@ -1,0 +1,9 @@
+div.message{
+    font-size: 4vw;
+    color: aliceblue;
+    background: var(--tertearyChat-bg-color);
+    border-radius: 20px;
+    padding: 2% 3%;
+    width: 90%;
+    margin: 2% auto;
+}
