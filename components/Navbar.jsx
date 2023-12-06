@@ -27,7 +27,7 @@ export default function Navbar() {
   
     useEffect(() => {
       if (authData.userId) {
-        fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE+`/${authData.userId}`, {
+        fetch(process.env.NEXT_PUBLIC_APIURL+'/paciente'+`/${authData.userId}`, {
           headers: {
             Authorization: `${authData.token}`,
             "Content-Type": "application/json"

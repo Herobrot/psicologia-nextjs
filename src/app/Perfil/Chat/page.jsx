@@ -12,13 +12,18 @@ export default function Chat() {
     const [inputMessage, setInputMessage] = useState('');
 
     useEffect(() => {
-        const newSocket = new WebSocket('wss://api-vvmz.onrender.com');
+        const newSocket = new WebSocket('ws://localhost:3001');
     
         newSocket.onopen = () => console.log("Conexión WebSocket abierta");
         newSocket.onmessage = (event) => {
-            if (typeof event.data === 'string') {
-                const newMessages = event.data.split(/[\n]+/).filter(msg => msg.trim() !== '');
-                setMessages(prev => [...prev, ...newMessages]);
+         
+            if (event.data instanceof Blob) {
+                const reader = new FileReader();
+                reader.onload = function() {
+                    const text = reader.result;
+                    setMessages(prev => [...prev, { text: text, type: 'received' }]);
+                };
+                reader.readAsText(event.data);
             }
         };
         
@@ -33,6 +38,7 @@ export default function Chat() {
     const sendMessage = () => {
         if (socket && inputMessage) {
             socket.send(inputMessage);
+            setMessages(prev => [...prev, { text: inputMessage, type: 'sent' }]);
             setInputMessage('');
         }
         const scroll = document.getElementById('scroll');
@@ -52,12 +58,18 @@ export default function Chat() {
                     <h2>Chat.</h2>
                 </div>
 
-                <div className="contenedorChat">
-                    {messages.map((message, index) => (
-                        <div className='message' key={index}>{message}</div>
-                    ))}
-                    <span id="scroll" />
-                </div>
+                <div className="contenedorChat ">
+    {messages.map((message, index) => (
+        <div 
+            className={`message ${message.type === 'sent' ? 'sent' : 'received'}`} 
+            key={index}
+        >
+            {message.text}
+        </div>
+    ))}
+    <span id="scroll" />
+</div>
+
 
                 <div className="pieChat">
                     <div className="contenedorInput">

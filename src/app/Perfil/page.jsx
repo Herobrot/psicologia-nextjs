@@ -24,7 +24,7 @@ export default function Perfil() {
     const [notaMasReciente, setNotaMasReciente] = useState('');
     useEffect(() => {
 
-        fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE+'/' + authData.userId, {
+        fetch(process.env.NEXT_PUBLIC_APIURL+'/paciente/' + authData.userId, {
             headers: {
                 'Authorization': `${authData.token}`,
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ export default function Perfil() {
                     estado: data.estado,
                     password: data.password
                 });
-                fetch(process.env.NEXT_PUBLIC_APIURL_CITA+'/all/' + authData.userId, {
+                fetch(process.env.NEXT_PUBLIC_APIURL+'/cita/' +'all/' + authData.userId, {
                     headers: {
                         'Content-Type': 'application/json'
                     },

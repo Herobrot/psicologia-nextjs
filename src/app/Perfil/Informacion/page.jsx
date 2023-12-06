@@ -20,7 +20,7 @@ export default function Registro(){
     const [datosOriginales, setDatosOriginales] = useState({});
     useEffect(() => {
 
-        fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE+'/' + authData.userId, {
+        fetch(process.env.NEXT_PUBLIC_APIURL+'/paciente/' + authData.userId, {
             headers: {
                 'Authorization': `${authData.token}`,
                 'Content-Type': 'application/json'
@@ -219,7 +219,7 @@ export default function Registro(){
                             correo: correo,
                             password: pass
                         }                            
-                        const response = await fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE, {
+                        const response = await fetch(process.env.NEXT_PUBLIC_APIURL+"/paciente", {
                         method: "post",
                         headers: {
                             'Content-Type': 'application/json',

@@ -52,7 +52,7 @@ main > div.contenedorChat{
 div.contenedorChat > div{
     font-size: 4vw;
     color: aliceblue;
-    background: var(--tertearyChat-bg-color);
+   
     border-radius: 20px;
     padding: 2% 3%;
     width: 90%;
@@ -102,5 +102,23 @@ div.contenedorInput > span > svg{
     color: aliceblue;
     font-size: 1em;
 }
+
+.message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.sent {
+    background-color: #5eff00; 
+    align-self: flex-end;
+}
+
+.received {
+    background-color: rgb(0, 213, 255); 
+    align-self: flex-start; 
+}
+
+
 
 

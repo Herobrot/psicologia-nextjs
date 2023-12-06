@@ -11,7 +11,7 @@ export default function Chatbot() {
     const [inputMessage, setInputMessage] = useState('');
 
     useEffect(() => {
-        const newSocket = new WebSocket('wss://api-vvmz.onrender.com');
+        const newSocket = new WebSocket(process.env.NEXT_PUBLIC_APIRUL_WEB);
     
         newSocket.onopen = () => console.log("Conexión WebSocket abierta");
         newSocket.onmessage = (event) => {

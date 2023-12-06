@@ -148,7 +148,7 @@ export default function Registro(){
                             correo: correo,
                             password: pass
                         }                            
-                        const response = await fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE, {
+                        const response = await fetch(process.env.NEXT_PUBLIC_APIURL+"/paciente", {
                         method: "post",
                         headers: {
                             'Content-Type': 'application/json',
