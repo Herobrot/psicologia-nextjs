@@ -104,7 +104,7 @@ export default function AdminPendientes(){
     }
 
     useEffect(() => {
-        fetch(process.env.NEXT_PUBLIC_APIURL_CITA+'/') 
+        fetch(process.env.NEXT_PUBLIC_APIURL+'/cita') 
             .then(response => response.json())
             .then(data => {
                console.log(data)

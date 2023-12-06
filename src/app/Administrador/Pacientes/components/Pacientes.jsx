@@ -6,7 +6,10 @@ export default function Pacientes({pacientes}){
         <>
             {pacientes.map(paciente => {
                 return(
-                    <Link href="/Administrador/Pacientes">
+                    <Link href={{
+                        pathname: `/Administrador/Pacientes/${paciente.nombre}`,
+                        query: { paciente: JSON.stringify(paciente) },
+                    }}>
                         <div className="contenedorPaciente" key={paciente._id}>
                             <span>{paciente.nombre + " " + paciente.apellidos}</span>
                         </div>

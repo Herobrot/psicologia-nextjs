@@ -1,0 +1,103 @@
+main{
+    background: var(--primary-bg-color);
+    font-family: 'Blinker';
+    padding-inline: 6%;
+    padding-top: 10%;
+    height: 100vh;
+    color:aliceblue;
+}
+
+main > div.cabeceraPaciente, main > div.contenedorPaciente, main > div.contenedorBotones{
+    font-size: 2em;
+    display: block;
+}
+
+main > div.cabeceraPaciente{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+main > div.cabeceraPaciente > a{
+    color:var(--primary-bg-color);
+    border-radius: 100%;
+    padding: 2.15% 4.8%;
+    background: var(--primaryAdmin-a-bg-color);
+}
+
+main > div.cabeceraPaciente > h2{
+    font-size: 1.1em;
+    width: 50%;
+}
+
+main > div.contenedorPaciente{
+    border-radius: 10px;
+    background: var(--secundaryAdmin-bg-color);
+    padding: 2% 3% 5% 3%;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+div.contenedorPaciente > h4{
+    font-size: 1.3em;
+    margin-block: 2%;
+    font-weight: 600;
+}
+
+div.contenedorPaciente > div{
+    font-weight: 300;
+    border-radius: 30px;
+    padding-left: 5%;
+    padding-block: 2%;
+    background: #2C276B;
+    font-size: 1.2em;
+    overflow-x: auto;
+}
+
+main > div.contenedorBotones{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+}
+
+div.contenedorBotones > a{
+    margin: 2vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+div.contenedorBotones > a > button{
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color:aliceblue;
+    padding: 2% 8%;
+    border: 0;
+}
+
+div.contenedorBotones > a > svg{
+    font-size: 1.5em;
+}
+
+div.contenedorBotones > a > svg#historial{
+    color: var(--primaryAdmin-a-bg-color);
+}
+
+div.contenedorBotones > a > button#historial{
+    background: var(--primaryAdmin-a-bg-color);
+}
+
+div.contenedorBotones > a > svg#chat{
+    color: var(--primaryAdmin-bg-color);
+}
+
+div.contenedorBotones > a > button#chat{
+    background: var(--primaryAdmin-bg-color);
+    padding: 2% 11.55%;
+}
+
