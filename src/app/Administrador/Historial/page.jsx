@@ -27,7 +27,7 @@ export default function AdminHistorial(){
     ));
     useEffect(() => {
  
-        fetch(process.env.NEXT_PUBLIC_APIURL_CITA) 
+        fetch(process.env.NEXT_PUBLIC_APIURL+"/cita") 
             .then(response => response.json())
             .then(data => {
                 const citasFiltradas = data.filter(cita => cita.EstatusCita === "Confirmada");

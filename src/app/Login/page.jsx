@@ -7,7 +7,6 @@ import { saveAuthData, getAuthData, clearAuthData,IniciarSesion } from "../../..
 import "./Login.css";
 
 export default function Login() {
-    const apiPaciente = process.env.NEXT_PUBLIC_APIURL
     const [credentials, setCredentials] = useState({ telefono: '', password: '',correo:'' });
     const handleInputChange = (e) => {
      
@@ -35,7 +34,7 @@ export default function Login() {
         }
         IniciarSesion(credentials.password,credentials.correo)
 
-        fetch(apiPaciente+'/paciente/login', {
+        fetch(process.env.NEXT_PUBLIC_APIURL+'/paciente/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

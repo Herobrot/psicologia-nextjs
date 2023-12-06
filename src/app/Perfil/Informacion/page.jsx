@@ -80,7 +80,7 @@ export default function Registro(){
     };
     const actualizarDatos = async () => {
         try {
-            const response = await fetch(process.env.NEXT_PUBLIC_APIURL_PACIENTE+'/' + authData.userId, {
+            const response = await fetch(process.env.NEXT_PUBLIC_APIURL+'/paciente/' + authData.userId, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `${authData.token}`,

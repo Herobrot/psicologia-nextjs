@@ -1,12 +1,11 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import "./Chat.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Link from 'next/link';
 import Mensajes from './components/Mensajes';
-import { Suspense } from 'react';
 import { getAuthData } from '../../../../Token';
 
 export default function Chat() {
@@ -77,7 +76,7 @@ export default function Chat() {
                 </div>
 
                 <div className="contenedorChat">
-                    <Suspense fallback={<div>Cargando...</div>}>
+                    <Suspense fallback={<div id='cargando'><FontAwesomeIcon icon={faSpinner} /></div>}>
                         <Mensajes data={messages} />
                     </Suspense>
                 <span id="scroll" />

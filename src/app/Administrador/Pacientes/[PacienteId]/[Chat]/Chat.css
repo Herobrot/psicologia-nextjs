@@ -50,6 +50,22 @@ main#chat > div.contenedorChat{
     height: 75svh;
 }
 
+main#chat > div.contenedorChat > div#cargando{
+    color: var(--tertearyChat-bg-color);
+    padding: 0;
+    font-size: 3em;
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 main#chat > div.pieChat{
     position: absolute;
     bottom: 0;
@@ -93,7 +109,6 @@ div.contenedorInput > span > svg{
     color: aliceblue;
     font-size: 1em;
 }
-
 
 
 

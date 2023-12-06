@@ -1,8 +1,8 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import "./Chatbot.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Mensajes from './components/Mensajes';
 
@@ -13,7 +13,7 @@ export default function Chatbot() {
     const [inputMessage, setInputMessage] = useState('');
 
     useEffect(() => {
-        const newSocket = new WebSocket(process.env.NEXT_PUBLIC_APIRUL_WEB);
+        const newSocket = new WebSocket('ws://localhost:3001');
     
         newSocket.onopen = () => console.log("Conexión WebSocket abierta");
         newSocket.onmessage = (event) => {
@@ -55,7 +55,9 @@ export default function Chatbot() {
                 </div>
 
                 <div className="contenedorChat">
-                    <Mensajes data={messages} />
+                    <Suspense fallback={<div id='cargando'><FontAwesomeIcon icon={faSpinner} /></div>}>
+                        <Mensajes data={messages} />
+                    </Suspense>
                     <span id="scroll" />
                 </div>
 

@@ -49,6 +49,22 @@ main > div.contenedorChat{
     height: 75svh;
 }
 
+main > div.contenedorChat > div#cargando{
+    color: var(--tertearyChat-bg-color);
+    padding: 0;
+    font-size: 3em;
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 div.contenedorChat > div{
     font-size: 4vw;
     color: aliceblue;

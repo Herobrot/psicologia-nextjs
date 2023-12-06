@@ -43,7 +43,7 @@ export default function PacienteIndividual({params}){
                 <div className="contenedorBotones">                    
                     <Link href={{
                         pathname: `/Administrador/Pacientes/${paciente.nombre}/Historial`,
-                        query: {id: paciente._id}
+                        query: { pacienteHistorial: JSON.stringify(paciente) }
                         }}>
                         <FontAwesomeIcon id="historial" icon={faCalendar} />
                         <button id="historial" type="button">Ver historial</button>
