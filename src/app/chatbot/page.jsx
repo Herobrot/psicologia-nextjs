@@ -13,7 +13,7 @@ export default function Chatbot() {
     const [inputMessage, setInputMessage] = useState('');
 
     useEffect(() => {
-        const newSocket = new WebSocket('ws://localhost:3001');
+        const newSocket = new WebSocket(process.env.NEXT_PUBLIC_APIRUL_WEB2);
     
         newSocket.onopen = () => console.log("Conexión WebSocket abierta");
         newSocket.onmessage = (event) => {
